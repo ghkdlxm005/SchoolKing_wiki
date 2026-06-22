@@ -1,8 +1,11 @@
 // @ts-check
-// SchoolKing 팀 위키 설정
+// SchoolKing team wiki configuration
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import {createRequire} from 'module';
+
+const require = createRequire(import.meta.url);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -14,11 +17,11 @@ const config = {
     v4: true,
   },
 
-  // GitHub Pages 주소
+  // Production URL (GitHub Pages)
   url: 'https://ghkdlxm005.github.io',
   baseUrl: '/SchoolKing_wiki/',
 
-  // GitHub Pages 배포 설정
+  // GitHub Pages deployment settings
   organizationName: 'ghkdlxm005',
   projectName: 'SchoolKing_wiki',
   deploymentBranch: 'gh-pages',
@@ -28,6 +31,7 @@ const config = {
 
   markdown: {
     format: 'detect',
+    mermaid: true,
     hooks: {
       onBrokenMarkdownLinks: 'warn',
       onBrokenMarkdownImages: 'warn',
@@ -39,6 +43,22 @@ const config = {
     locales: ['ko'],
   },
 
+  // Offline local search (Korean supported). Builds a search index at build time.
+  themes: [
+    '@docusaurus/theme-mermaid',
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['ko', 'en'],
+        indexBlog: true,
+        docsRouteBasePath: '/docs',
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
@@ -46,7 +66,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // GitHub에서 바로 수정 링크
+          // "Edit this page" link to GitHub
           editUrl: 'https://github.com/ghkdlxm005/SchoolKing_wiki/tree/main/',
         },
         blog: {
@@ -83,6 +103,11 @@ const config = {
             sidebarId: 'wikiSidebar',
             position: 'left',
             label: '위키',
+          },
+          {
+            to: 'pathname:///SchoolKing_wiki/admin/',
+            label: '✏️ 편집',
+            position: 'right',
           },
           {to: '/blog', label: '공지·개발일지', position: 'left'},
           {

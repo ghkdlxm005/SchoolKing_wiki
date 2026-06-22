@@ -1,0 +1,8 @@
+{
+  "label": "🏗️ System Architecture",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "게임 시스템 구조 — 시스템 맵, 통신 모델, 개별 시스템 명세."
+  }
+}
