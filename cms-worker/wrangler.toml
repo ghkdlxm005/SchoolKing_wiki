@@ -1,0 +1,7 @@
+name = "schoolking-cms-auth"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# Secrets are NOT written here. Set them after deploy:
+#   npx wrangler secret put GITHUB_CLIENT_ID
+#   npx wrangler secret put GITHUB_CLIENT_SECRET

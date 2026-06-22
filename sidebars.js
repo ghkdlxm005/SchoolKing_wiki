@@ -1,5 +1,5 @@
 // @ts-check
-// 사이드바: docs 폴더 구조를 그대로 따라감 (폴더 = 카테고리)
+// Sidebar auto-generated from the docs folder structure (folder = category)
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {

@@ -1,0 +1,121 @@
+backend:
+  name: github
+  repo: ghkdlxm005/SchoolKing_wiki
+  branch: main
+  # Replace with your deployed Cloudflare Worker URL (see CMS_로그인_설정_가이드.md).
+  base_url: https://YOUR-WORKER-NAME.YOUR-SUBDOMAIN.workers.dev
+  auth_endpoint: /github/authorize
+
+site_url: https://ghkdlxm005.github.io/SchoolKing_wiki/
+display_url: https://ghkdlxm005.github.io/SchoolKing_wiki/
+publish_mode: simple
+locale: ko
+
+media_folder: static/uploads
+public_folder: /SchoolKing_wiki/uploads
+
+collections:
+  - name: bugs
+    label: "🐞 버그 (Bug)"
+    label_singular: "버그"
+    description: "BUG-#### 기록. 새 버그는 New로 만드세요."
+    folder: docs/bugs
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 제목, name: title, widget: string, required: false }
+      - { label: 사이드바 순서, name: sidebar_position, widget: number, required: false, value_type: int }
+      - { label: 태그, name: tags, widget: list, required: false, hint: "예: bug, weapon, system" }
+      - { label: 본문, name: body, widget: markdown }
+
+  - name: features
+    label: "✨ 기능 (Feature)"
+    label_singular: "기능"
+    description: "FEAT-#### 기능 이력."
+    folder: docs/features
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 제목, name: title, widget: string, required: false }
+      - { label: 사이드바 순서, name: sidebar_position, widget: number, required: false, value_type: int }
+      - { label: 태그, name: tags, widget: list, required: false, hint: "예: bug, weapon, system" }
+      - { label: 본문, name: body, widget: markdown }
+
+  - name: lessons
+    label: "📘 교훈 (Lesson)"
+    label_singular: "교훈"
+    description: "LESSON-#### 재발 방지 규칙."
+    folder: docs/lessons
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 제목, name: title, widget: string, required: false }
+      - { label: 사이드바 순서, name: sidebar_position, widget: number, required: false, value_type: int }
+      - { label: 태그, name: tags, widget: list, required: false, hint: "예: bug, weapon, system" }
+      - { label: 본문, name: body, widget: markdown }
+
+  - name: systems
+    label: "🏗️ 게임 시스템"
+    label_singular: "시스템 문서"
+    description: "개별 시스템 명세."
+    folder: docs/architecture/systems
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 제목, name: title, widget: string, required: false }
+      - { label: 사이드바 순서, name: sidebar_position, widget: number, required: false, value_type: int }
+      - { label: 태그, name: tags, widget: list, required: false, hint: "예: bug, weapon, system" }
+      - { label: 본문, name: body, widget: markdown }
+
+  - name: architecture
+    label: "🏗️ 아키텍처(개요)"
+    label_singular: "문서"
+    description: "아키텍처 개요 문서."
+    folder: docs/architecture
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 제목, name: title, widget: string, required: false }
+      - { label: 사이드바 순서, name: sidebar_position, widget: number, required: false, value_type: int }
+      - { label: 태그, name: tags, widget: list, required: false, hint: "예: bug, weapon, system" }
+      - { label: 본문, name: body, widget: markdown }
+
+  - name: overview
+    label: "🗺️ 개요 (Overview)"
+    label_singular: "문서"
+    description: "프로젝트 개요 문서."
+    folder: docs/overview
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 제목, name: title, widget: string, required: false }
+      - { label: 사이드바 순서, name: sidebar_position, widget: number, required: false, value_type: int }
+      - { label: 태그, name: tags, widget: list, required: false, hint: "예: bug, weapon, system" }
+      - { label: 본문, name: body, widget: markdown }
+
+  - name: todo
+    label: "✅ TODO / 로드맵"
+    label_singular: "문서"
+    description: "할 일과 로드맵."
+    folder: docs/todo
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 제목, name: title, widget: string, required: false }
+      - { label: 사이드바 순서, name: sidebar_position, widget: number, required: false, value_type: int }
+      - { label: 태그, name: tags, widget: list, required: false, hint: "예: bug, weapon, system" }
+      - { label: 본문, name: body, widget: markdown }
+
+  - name: keywords
+    label: "🔑 키워드"
+    label_singular: "문서"
+    description: "키워드 허브 문서."
+    folder: docs/keywords
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 제목, name: title, widget: string, required: false }
+      - { label: 사이드바 순서, name: sidebar_position, widget: number, required: false, value_type: int }
+      - { label: 태그, name: tags, widget: list, required: false, hint: "예: bug, weapon, system" }
+      - { label: 본문, name: body, widget: markdown }
+
