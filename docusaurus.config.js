@@ -68,6 +68,7 @@ const config = {
           sidebarPath: './sidebars.js',
           // "Edit this page" link to GitHub
           editUrl: 'https://github.com/ghkdlxm005/SchoolKing_wiki/tree/main/',
+          showLastUpdateTime: process.env.CI === 'true',
         },
         blog: {
           blogTitle: '공지·개발일지',
@@ -90,6 +91,9 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       colorMode: {
         respectPrefersColorScheme: true,
+      },
+      docs: {
+        sidebar: { autoCollapseCategories: false },
       },
       navbar: {
         title: 'SchoolKing 위키',
