@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index",
     "description": "재발 방지 규칙. 버그에서 얻은 교훈을 규칙으로 고정한다."
-  }
+  },
+  "collapsed": false
 }

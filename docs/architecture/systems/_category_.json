@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index",
     "description": "개별 시스템 명세서. 각 문서는 책임·입출력·관련 기능/버그를 링크한다."
-  }
+  },
+  "collapsed": false
 }

@@ -4,6 +4,8 @@ sidebar_position: 1
 tags: [bug]
 ---
 
+import DocCardList from '@theme/DocCardList';
+
 # 버그 이력 (Bug History)
 
 새 버그는 `docs/_templates/bug.md`를 복사해 `BUG-####-제목.md`로 만든다.
@@ -14,3 +16,7 @@ tags: [bug]
 
 > 상태: `열림(open)` → `수정 중` → `해결(fixed)` → `재발 감시`
 > 심각도: `critical` / `high` / `medium` / `low`
+
+## 📂 하위 문서
+
+<DocCardList />

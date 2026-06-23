@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index",
     "description": "프로젝트 전체 구조 — 무엇을 만드는가, 핵심 규칙, 기술 스택."
-  }
+  },
+  "collapsed": false
 }

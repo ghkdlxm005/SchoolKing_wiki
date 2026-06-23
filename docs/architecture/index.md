@@ -4,6 +4,8 @@ sidebar_position: 1
 tags: [architecture, system]
 ---
 
+import DocCardList from '@theme/DocCardList';
+
 # 시스템 아키텍처 개요
 
 > 📌 실제 Roblox 코드 구조 분석은 **[코드 구조](./code-structure.md)** 참고 (설정 기반 모듈·통신 맵·체력/쉴드).
@@ -39,3 +41,7 @@ flowchart TD
 
 - 서버 권위: 데미지/생성/판정은 서버에서 확정한다.
 - 자세한 규칙: [클라이언트-서버 모델](./client-server-model.md), [데이터 흐름](./data-flow.md).
+
+## 📂 하위 문서
+
+<DocCardList />

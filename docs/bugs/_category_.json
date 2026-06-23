@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index",
     "description": "버그 기록과 해결. 각 버그는 BUG-#### ID, 심각도, 원인, 해결, 재발 방지 링크를 가진다."
-  }
+  },
+  "collapsed": false
 }
