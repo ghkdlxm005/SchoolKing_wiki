@@ -41,6 +41,13 @@ tags: [system, weapon, ammo]
 - 좌클릭 발사 / 우클릭 조준(ADS)·차지 / R 재장전 / B 발사모드 / V 근접
 - 입력은 ClientHandler → RemoteEvent → ServerHandler가 판정 → 데미지는 [ShieldSystem](./combat-damage-system.md)
 
+## 리깅 · 머즐(레이저 발사 지점)
+
+무기 모형 조립(리깅)과 레이저/총알이 나가는 위치는 → [뷰모델 리깅 · 머즐](./viewmodel-rigging.md).
+- 애니메이션 클립 구성: [애니메이션 세트](./animation-system.md)
+- 구현 방식·컨벤션: [구현 방식](./implementation-conventions.md)
+
+
 ## 새 무기 추가 방법
 
 1. 해당 Config(Gun/Grenade/Melee)에 `setmetatable({...}, {__index = Default})` 블록 추가

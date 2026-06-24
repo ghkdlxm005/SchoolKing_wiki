@@ -13,6 +13,8 @@ import DocCardList from '@theme/DocCardList';
 
 ## 지금 우선순위 (Next Up)
 
+- [ ] **SiliconGun 1인칭 애니메이션 제작·적용** (Idle/Equip/Fire/Reload 등) — 현재 미구현 ([애니메이션 세트](../architecture/systems/animation-system.md))
+
 - [ ] 무기별 데미지/TTK 1차 밸런싱 ([전투 시스템](../architecture/systems/combat-damage-system.md))
 - [ ] 수류탄 서버 핸들러 구현 ([FEAT-0001](../features/FEAT-0001-grenade-fragmentation.md))
 - [ ] 1등/ESP/리벤지 UI ([점수/랭크](../architecture/systems/scoring-rank-system.md))
