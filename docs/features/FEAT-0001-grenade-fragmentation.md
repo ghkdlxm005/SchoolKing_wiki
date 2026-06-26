@@ -26,3 +26,4 @@ tags: [feature, weapon, combat]
 
 - 2026-02: 기획 등록
 - 2026-06-05: 코드 분석으로 실제 수치 반영(반경 20 / 95→40 / 신관 3초)
+- 2026-06-26: 임시 뷰모델 `CANVM`(CupVM 베이스+can 메쉬 0.05배) 적용. 쉴드 우선 데미지로 수정([BUG-0002](../bugs/BUG-0002-can-shield-bypass.md)).

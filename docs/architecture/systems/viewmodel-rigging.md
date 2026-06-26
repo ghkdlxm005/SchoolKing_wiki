@@ -54,11 +54,11 @@ local endPos = raycast(origin, camera.LookVector * config.MaxRange)
 - **조준(ADS)** = `AimPart` (LegCrutch는 `Aimpart` 표기 — 코드가 둘 다 인식)
 - **FakeCamera** = hip-fire 시 카메라 부착점 (ADS=AimPart로 보간)
 
-## SiliconGun 상세 (예시 기준점)
+## SiliconGun 상세 (2026-06-26 신규 뷰모델로 교체)
 
-- 허브 `Main`(투명 0.1stud) → Weld로 `barrel`·`body`·`HumanoidRootPart` 묶음 (Motor6D 없음 = 고정 리깅)
-- 머즐 `barrel`: MeshId `72818681749725`, 크기 `1.86 × 0.43 × 0.46`
-- 직속 23개 / 전체 50개 파트
+- **신규 리깅 뷰모델** — 직속 **26개 / 전체 57개** 파트, PrimaryPart=HumanoidRootPart, `main`(소문자) 웰드 앵커.
+- 머즐 `barrel` — 빔이 **barrel 앞면 끝**에서 출발(카메라 시선과 가장 정렬된 축 보정).
+- 겹침 튜브 `foam`(Mac part 본) / `foam 2`(Mac part 2 본) — 정확히 겹쳐 재장전 잔상 원인이었음 → `foam 2` **기본 숨김**, 재장전 시 빠져나간 튜브 자동 숨김. ([FEAT-0003](../../features/FEAT-0003-silicongun-rework.md), [BUG는 없음·연출])
 
 ## 근접 (Dustpan) 리깅 — 머즐 없음
 
@@ -77,6 +77,8 @@ local endPos = raycast(origin, camera.LookVector * config.MaxRange)
 | --- | --- |
 | Cup | `GrenadeSystem.ProjectileTemplates.Cup` (메쉬 템플릿 복제) |
 | CAN | 절차 생성 원통(`GrenadeConfig.CAN` 속성으로 생성) |
+
+> **CAN 뷰모델(2026-06-26):** 임시 `CANVM`(CupVM 리그 베이스 + can 메쉬 can_body/can_cap/can_clip, 원본 ~20배라 **0.05배 축소**). 정식 리깅본 나오면 교체 예정.
 
 ## 변경 시 기록 방법
 

@@ -22,15 +22,19 @@ tags: [system, weapon, animation, code]
 | Compass (10) | Idle, Equip, AimIn, AimOut, Fire, FireAim, Reload, Run, Melee, Tilt |
 | LegCrutch (10) | Idle, Equip, AimIn, AimOut, Fire, FireAim, Reload, Run, Melee, Tilt |
 | Toaster (17) | 위 10 + FireLeft, FireRight, ReloadDedicated, Pour, PourReload, BreadLeft, BreadRight |
-| SiliconGun | ⏳ 미구현 — 추후 애니메이션 작업 때 추가 예정 ([TODO](../../todo/index.md)) |
+| SiliconGun (10) | Idle*, Equip, AimIn*, AimOut*, Fire(빔), FireAim(빔), Reload, Run, Melee*, Tilt — `*`=미등록 ([FEAT-0003](../../features/FEAT-0003-silicongun-rework.md)) |
 
 > Toaster가 많은 이유: **더블배럴**(FireLeft/Right) + **3단계 차지(Pour/PourReload)** + 빵 연출(Bread) 때문.
+
+**2026-06-26 변경:**
+- SiliconGun 전용 애니 등록 — Equip `82424620672014`, Reload `90548560652608`, Tilt `116759963207169`, Run `136540259610641`. Fire/FireAim는 비움(연속 빔). Idle·AimIn·AimOut·Melee 미등록(추후).
+- Toaster `ReloadDedicated` 교체 `104203568840410` → `108963317284184`. `HandleUp` 애니/코드 삭제. `FireRight`(2발째) 우선순위 Action3 → **Action4**.
 
 ## 총기 3인칭 애니메이션 (`ThirdPerson/`)
 
 | 무기 | 클립 |
 | --- | --- |
-| Compass / LegCrutch / Toaster | Idle, Equip, Reload, Aim, Fire (각 5) |
+| Compass / LegCrutch / Toaster / **SiliconGun** | Idle, Equip, Reload, Aim, Fire (각 5) |
 
 ## 수류탄 애니메이션 (3인칭)
 

@@ -14,6 +14,7 @@ import DocCardList from '@theme/DocCardList';
 | --- | --- | --- | --- | --- |
 | [FEAT-0001](./FEAT-0001-grenade-fragmentation.md) | 세열 수류탄 | 구현 중 | weapon | 2026-02 |
 | [FEAT-0002](./FEAT-0002-mug-puddle-grenade.md) | 머그컵 장판 수류탄 | 기획 | weapon | 2026-02 |
+| [FEAT-0003](./FEAT-0003-silicongun-rework.md) | SiliconGun 뷰모델·레이저·재장전 개편 | 구현 | weapon | 2026-06 |
 
 > 상태: `기획` → `구현 중` → `완료` → `보류`
 

@@ -28,6 +28,10 @@ if remaining > 0 then humanoid:TakeDamage(remaining) end  -- 남은 건 체력
 
 > 메모: 구 기획서의 "쉴드 50"은 현재 코드(쉴드 100)와 다름 — **코드 값(100)이 현재 구현 상태**.
 
+:::warning 2026-06-26 수정
+모든 무기 데미지는 **`ShieldSystem.DealDamage` 경유**(쉴드 먼저). CAN이 옛 핸들러 복사본이라 `TakeDamage`로 쉴드를 무시하던 버그를 수정함 — [BUG-0002](../../bugs/BUG-0002-can-shield-bypass.md), 규칙 [LESSON-0002](../../lessons/LESSON-0002-damage-via-shieldsystem.md).
+:::
+
 ## 연결
 
 판정은 서버 → 결과 표시는 [UI/HUD](./ui-hud-system.md), 점수는 [점수/랭크](./scoring-rank-system.md).

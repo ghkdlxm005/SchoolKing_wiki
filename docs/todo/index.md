@@ -13,7 +13,9 @@ import DocCardList from '@theme/DocCardList';
 
 ## 지금 우선순위 (Next Up)
 
-- [ ] **SiliconGun 1인칭 애니메이션 제작·적용** (Idle/Equip/Fire/Reload 등) — 현재 미구현 ([애니메이션 세트](../architecture/systems/animation-system.md))
+- [x] SiliconGun 1인칭 애니 일부 적용 (Equip/Reload/Tilt/Run) — 2026-06-26
+- [ ] SiliconGun 나머지 애니 (Idle/AimIn/AimOut/Melee) 등록
+- [ ] CAN 정식 리깅 뷰모델 (현재 CupVM 임시)
 
 - [ ] 무기별 데미지/TTK 1차 밸런싱 ([전투 시스템](../architecture/systems/combat-damage-system.md))
 - [ ] 수류탄 서버 핸들러 구현 ([FEAT-0001](../features/FEAT-0001-grenade-fragmentation.md))
