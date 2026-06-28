@@ -93,7 +93,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       docs: {
-        sidebar: { autoCollapseCategories: false },
+        sidebar: { autoCollapseCategories: true },
       },
       navbar: {
         title: 'SchoolKing 위키',
