@@ -17,20 +17,16 @@ Roblox 게임 **School KING**의 시스템 설계·기록 위키입니다.
 | **사람(설계자)** | 시스템 구조 설계, 검증, 버그/기능 기록, 문서화 |
 | **Claude(AI)** | 코드 구현 |
 
-## 어디로 갈까
+## 지금 뭐 하려고 왔나요?
 
-- [🗺️ Project Overview](./overview/index.md) — 전체 그림부터.
-- [🏗️ System Architecture](./architecture/index.md) — 게임 시스템 구조.
-- [✨ Feature History](./features/index.md) — 무엇을, 왜 추가했나.
-- [🐞 Bug History](./bugs/index.md) — 버그와 해결.
-- [📘 Lessons Learned](./lessons/index.md) — 재발 방지 규칙.
-- [✅ TODO / Future Plan](./todo/index.md) — 다음 할 일.
-- [🔑 Keyword Index](./keywords/index.md) — Weapon·Ammo·UI·Event 검색 허브.
+| 지금 상황 | 여기로 |
+| --- | --- |
+| 🔧 **버그를 고치는 중** | [🐞 Bug History](./bugs/index.md) — 비슷한 버그·원인·해결 |
+| ✨ **새 기능을 만드는 중** | [✨ Feature History](./features/index.md) + [무기 추가법](./architecture/systems/combat/weapon-system.md) |
+| 📖 **시스템이 어떻게 굴러가는지 알고 싶다** | [🏗️ System Architecture](./architecture/index.md) |
+| 🔍 **특정 단어로 찾고 싶다** | [🔑 Keyword Index](./keywords/index.md) (Weapon·Ammo·UI·Event) |
+| 🗺️ **이 게임이 뭔지부터** | [🗺️ Project Overview](./overview/index.md) |
+| ✅ **다음에 뭐 할지** | [✅ TODO / Future Plan](./todo/index.md) |
+| 🧠 **같은 실수 안 하려고** | [📘 Lessons Learned](./lessons/index.md) |
 
-## 기록 원칙
-
-1. 모든 변경은 **왜 바꿨는지**를 함께 적는다.
-2. 버그는 `BUG-####`, 기능은 `FEAT-####`, 교훈은 `LESSON-####` ID로 관리한다.
-3. 새 문서는 `_templates/`의 양식을 복사해 만든다.
-
-> 편집 방법은 [📖 위키 사용법](./위키-사용법/01-위키-둘러보기/index.md) 참고. 검색은 오른쪽 위 🔍.
+> 처음이면 위에서부터 천천히. 매일 쓰는 건 보통 **Bug / Featur

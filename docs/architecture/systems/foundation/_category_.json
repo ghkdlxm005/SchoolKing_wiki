@@ -1,0 +1,9 @@
+{
+  "label": "🧱 기반 (Foundation)",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "이벤트 통신·구현 컨벤션 — 토대."
+  },
+  "collapsed": true
+}

@@ -1,4 +1,5 @@
 ---
+sidebar_position: 1
 title: 이벤트 시스템 (RemoteEvent 통신)
 tags: [system, event]
 ---

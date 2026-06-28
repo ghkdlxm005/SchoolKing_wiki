@@ -8,7 +8,7 @@ tags: [feature, weapon, animation]
 | 항목 | 값 |
 | --- | --- |
 | 상태 | 구현됨 (2026-06-26) |
-| 관련 시스템 | [무기](../architecture/systems/weapon-system.md), [리깅·머즐](../architecture/systems/viewmodel-rigging.md), [애니메이션](../architecture/systems/animation-system.md) |
+| 관련 시스템 | [무기](../architecture/systems/combat/weapon-system.md), [리깅·머즐](../architecture/systems/presentation/viewmodel-rigging.md), [애니메이션](../architecture/systems/presentation/animation-system.md) |
 
 ## 왜 (의도)
 

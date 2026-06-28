@@ -9,5 +9,5 @@ tags: [keyword]
 
 ## 관련 문서
 
-- [탄약/게이지 시스템](../architecture/systems/ammo-system.md)
-- [무기 시스템](../architecture/systems/weapon-system.md)
+- [탄약/게이지 시스템](../architecture/systems/combat/ammo-system.md)
+- [무기 시스템](../architecture/systems/combat/weapon-system.md)

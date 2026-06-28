@@ -84,7 +84,7 @@ StarterPack/Compass (Tool)
 - 데미지는 **쉴드 먼저 흡수 → 남은 만큼 체력 감소** (`DealDamage`)
 - 기본 체력 자연재생은 꺼져 있음(빈 `Health` 스크립트). 회복은 `HealHandler` + `HealRequest`로 처리.
 
-자세히는 [전투/데미지 시스템](./systems/combat-damage-system.md).
+자세히는 [전투/데미지 시스템](./systems/combat/combat-damage-system.md).
 
 ## 설정 상속 패턴 (중요)
 
@@ -101,5 +101,5 @@ GunConfig.Compass = setmetatable({
 
 ## 관련
 
-- 무기 스탯 전체: [무기 시스템](./systems/weapon-system.md)
+- 무기 스탯 전체: [무기 시스템](./systems/combat/weapon-system.md)
 - 시스템 맵: [아키텍처 개요](./index.md)

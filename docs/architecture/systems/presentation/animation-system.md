@@ -1,4 +1,5 @@
 ---
+sidebar_position: 2
 title: 애니메이션 시스템 (Animation Set)
 tags: [system, weapon, animation, code]
 ---
@@ -22,7 +23,7 @@ tags: [system, weapon, animation, code]
 | Compass (10) | Idle, Equip, AimIn, AimOut, Fire, FireAim, Reload, Run, Melee, Tilt |
 | LegCrutch (10) | Idle, Equip, AimIn, AimOut, Fire, FireAim, Reload, Run, Melee, Tilt |
 | Toaster (17) | 위 10 + FireLeft, FireRight, ReloadDedicated, Pour, PourReload, BreadLeft, BreadRight |
-| SiliconGun (10) | Idle*, Equip, AimIn*, AimOut*, Fire(빔), FireAim(빔), Reload, Run, Melee*, Tilt — `*`=미등록 ([FEAT-0003](../../features/FEAT-0003-silicongun-rework.md)) |
+| SiliconGun (10) | Idle*, Equip, AimIn*, AimOut*, Fire(빔), FireAim(빔), Reload, Run, Melee*, Tilt — `*`=미등록 ([FEAT-0003](../../../features/FEAT-0003-silicongun-rework.md)) |
 
 > Toaster가 많은 이유: **더블배럴**(FireLeft/Right) + **3단계 차지(Pour/PourReload)** + 빵 연출(Bread) 때문.
 

@@ -1,4 +1,5 @@
 ---
+sidebar_position: 3
 title: 탄약 / 재장전 시스템 (Ammo System)
 tags: [system, ammo, weapon]
 ---
@@ -14,7 +15,7 @@ tags: [system, ammo, weapon]
 | Toaster | 2 | 24 | 2.4s | 0.15s (더블배럴) |
 | SiliconGun | 100(에너지) | 300 | 1.8s | 0.09s (틱) |
 
-- 재장전은 `ReloadEvent`(C→S), 잔탄 UI는 `AmmoUpdateEvent`(S→C). → [코드 구조](../code-structure.md)
+- 재장전은 `ReloadEvent`(C→S), 잔탄 UI는 `AmmoUpdateEvent`(S→C). → [코드 구조](../../code-structure.md)
 - SiliconGun은 탄약 대신 **에너지 틱**을 소모(램핑 데미지).
 
 #system #ammo

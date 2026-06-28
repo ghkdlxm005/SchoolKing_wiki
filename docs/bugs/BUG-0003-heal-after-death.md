@@ -9,7 +9,7 @@ tags: [bug, system]
 | --- | --- |
 | 상태 | fixed (2026-06-26) |
 | 심각도 | medium |
-| 관련 시스템 | [전투/데미지](../architecture/systems/combat-damage-system.md) (힐) |
+| 관련 시스템 | [전투/데미지](../architecture/systems/combat/combat-damage-system.md) (힐) |
 | 발견일 | 2026-06-26 |
 
 ## 증상

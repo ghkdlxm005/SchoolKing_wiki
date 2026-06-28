@@ -1,4 +1,5 @@
 ---
+sidebar_position: 1
 title: 스폰 / 리스폰 시스템 (Spawn & Respawn)
 tags: [system, spawn]
 ---
@@ -17,6 +18,6 @@ tags: [system, spawn]
 
 ## 주의
 
-무적 타이밍 관련 버그 주의 → [BUG-0001](../../bugs/BUG-0001-spawn-invincibility-timing.md) 참고.
+무적 타이밍 관련 버그 주의 → [BUG-0001](../../../bugs/BUG-0001-spawn-invincibility-timing.md) 참고.
 
 #system #spawn

@@ -20,4 +20,4 @@ tags: [architecture, system, event]
 | `StarterPlayer/StarterPlayerScripts` | 클라이언트 입력·HUD |
 | `StarterPack` / Tool | 무기 도구 + LocalScript |
 
-통신 객체 목록은 [이벤트 시스템](./systems/event-system.md)에서 관리한다.
+통신 객체 목록은 [이벤트 시스템](./systems/foundation/event-system.md)에서 관리한다.

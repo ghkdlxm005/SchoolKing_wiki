@@ -1,0 +1,9 @@
+{
+  "label": "⚔️ 전투 (Combat)",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "무기·데미지·탄약 — 전투 핵심 루프."
+  },
+  "collapsed": true
+}

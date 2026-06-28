@@ -1,0 +1,9 @@
+{
+  "label": "🔁 게임 루프 (Meta)",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "스폰·점수 — 매치 진행 흐름."
+  },
+  "collapsed": true
+}

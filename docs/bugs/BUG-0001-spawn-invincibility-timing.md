@@ -11,7 +11,7 @@ tags: [bug, spawn, combat]
 | --- | --- |
 | 상태 | 예시(open 가정) |
 | 심각도 | medium |
-| 관련 시스템 | [스폰/리스폰](../architecture/systems/spawn-respawn-system.md) |
+| 관련 시스템 | [스폰/리스폰](../architecture/systems/meta/spawn-respawn-system.md) |
 | 관련 기능 | — |
 | 발견일 | 2026-02-08 |
 

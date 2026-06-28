@@ -5,5 +5,5 @@
     "type": "generated-index",
     "description": "기능 추가 이력. 각 기능은 FEAT-#### ID, 상태, 관련 시스템, \"왜 넣었는가\"를 기록한다."
   },
-  "collapsed": false
+  "collapsed": true
 }

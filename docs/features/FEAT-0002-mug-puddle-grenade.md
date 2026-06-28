@@ -9,7 +9,7 @@ tags: [feature, weapon]
 | --- | --- |
 | 상태 | 구현됨 (코드 확인 2026-06-05) |
 | 구현 위치 | `StarterPack/Cup`, `GrenadeSystem/GrenadeConfig.Cup` |
-| 관련 시스템 | [무기](../architecture/systems/weapon-system.md) |
+| 관련 시스템 | [무기](../architecture/systems/combat/weapon-system.md) |
 
 ## 왜 (의도)
 

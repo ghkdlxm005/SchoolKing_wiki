@@ -9,5 +9,5 @@ tags: [keyword]
 
 ## 관련 문서
 
-- [UI/HUD 시스템](../architecture/systems/ui-hud-system.md)
-- [점수/랭크 시스템](../architecture/systems/scoring-rank-system.md)
+- [UI/HUD 시스템](../architecture/systems/presentation/ui-hud-system.md)
+- [점수/랭크 시스템](../architecture/systems/meta/scoring-rank-system.md)

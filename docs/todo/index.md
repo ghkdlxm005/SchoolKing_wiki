@@ -17,9 +17,9 @@ import DocCardList from '@theme/DocCardList';
 - [ ] SiliconGun 나머지 애니 (Idle/AimIn/AimOut/Melee) 등록
 - [ ] CAN 정식 리깅 뷰모델 (현재 CupVM 임시)
 
-- [ ] 무기별 데미지/TTK 1차 밸런싱 ([전투 시스템](../architecture/systems/combat-damage-system.md))
+- [ ] 무기별 데미지/TTK 1차 밸런싱 ([전투 시스템](../architecture/systems/combat/combat-damage-system.md))
 - [ ] 수류탄 서버 핸들러 구현 ([FEAT-0001](../features/FEAT-0001-grenade-fragmentation.md))
-- [ ] 1등/ESP/리벤지 UI ([점수/랭크](../architecture/systems/scoring-rank-system.md))
+- [ ] 1등/ESP/리벤지 UI ([점수/랭크](../architecture/systems/meta/scoring-rank-system.md))
 
 ## 📂 하위 문서
 

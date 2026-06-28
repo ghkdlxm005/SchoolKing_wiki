@@ -1,4 +1,5 @@
 ---
+sidebar_position: 1
 title: 뷰모델 리깅 · 머즐 (Viewmodel Rigging & Muzzle)
 tags: [system, weapon, code]
 ---
@@ -6,7 +7,7 @@ tags: [system, weapon, code]
 # 뷰모델 리깅 · 머즐 (Viewmodel Rigging & Muzzle)
 
 1인칭 무기 모형(Viewmodel)이 **어떻게 조립(리깅)되고, 레이저/총알이 어디서 나가는지**를 정리한다.
-구조 전체는 [코드 구조](../code-structure.md), 스탯은 [무기 시스템](./weapon-system.md) 참고.
+구조 전체는 [코드 구조](../../code-structure.md), 스탯은 [무기 시스템](../combat/weapon-system.md) 참고.
 스캔 기준일: **2026-06-24** (Studio 직접 분석). 이후 변경은 이 값과 비교해 추적한다.
 
 ## 머즐(발사 지점) 원리
@@ -58,7 +59,7 @@ local endPos = raycast(origin, camera.LookVector * config.MaxRange)
 
 - **신규 리깅 뷰모델** — 직속 **26개 / 전체 57개** 파트, PrimaryPart=HumanoidRootPart, `main`(소문자) 웰드 앵커.
 - 머즐 `barrel` — 빔이 **barrel 앞면 끝**에서 출발(카메라 시선과 가장 정렬된 축 보정).
-- 겹침 튜브 `foam`(Mac part 본) / `foam 2`(Mac part 2 본) — 정확히 겹쳐 재장전 잔상 원인이었음 → `foam 2` **기본 숨김**, 재장전 시 빠져나간 튜브 자동 숨김. ([FEAT-0003](../../features/FEAT-0003-silicongun-rework.md), [BUG는 없음·연출])
+- 겹침 튜브 `foam`(Mac part 본) / `foam 2`(Mac part 2 본) — 정확히 겹쳐 재장전 잔상 원인이었음 → `foam 2` **기본 숨김**, 재장전 시 빠져나간 튜브 자동 숨김. ([FEAT-0003](../../../features/FEAT-0003-silicongun-rework.md), [BUG는 없음·연출])
 
 ## 근접 (Dustpan) 리깅 — 머즐 없음
 
@@ -82,7 +83,7 @@ local endPos = raycast(origin, camera.LookVector * config.MaxRange)
 
 ## 변경 시 기록 방법
 
-리깅/머즐을 바꾸면 [변경 이력](../../changelog.md)에 한 줄 + 위 표 갱신:
+리깅/머즐을 바꾸면 [변경 이력](../../../changelog.md)에 한 줄 + 위 표 갱신:
 `YYYY-MM-DD — [무기] 머즐 파트/MeshId 또는 허브 조인트 변경 — 왜`
 
 #system #weapon #code

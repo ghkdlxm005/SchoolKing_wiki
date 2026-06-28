@@ -1,4 +1,5 @@
 ---
+sidebar_position: 2
 title: 점수 / 랭크 시스템 (Scoring & Rank)
 tags: [system, event, ui]
 ---
@@ -19,6 +20,6 @@ tags: [system, event, ui]
 
 ## 연결
 
-처치 입력은 [전투/데미지 시스템](./combat-damage-system.md), 표시는 [UI/HUD 시스템](./ui-hud-system.md).
+처치 입력은 [전투/데미지 시스템](../combat/combat-damage-system.md), 표시는 [UI/HUD 시스템](../presentation/ui-hud-system.md).
 
 #system #event #ui

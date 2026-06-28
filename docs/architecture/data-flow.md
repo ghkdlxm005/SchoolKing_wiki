@@ -18,4 +18,4 @@ sequenceDiagram
   R-->>C: 1등/리벤지/킬로그 UI 갱신
 ```
 
-관련: [전투/데미지 시스템](./systems/combat-damage-system.md), [점수/랭크 시스템](./systems/scoring-rank-system.md).
+관련: [전투/데미지 시스템](./systems/combat/combat-damage-system.md), [점수/랭크 시스템](./systems/meta/scoring-rank-system.md).

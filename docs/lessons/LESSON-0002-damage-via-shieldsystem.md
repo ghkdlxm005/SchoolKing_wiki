@@ -17,4 +17,4 @@ tags: [lesson, combat, weapon]
 ## 적용 대상
 
 새 무기 핸들러를 **기존 핸들러 복사**로 만들 때 특히 주의. 데미지 호출부를 전부 점검.
-관련: [전투/데미지 시스템](../architecture/systems/combat-damage-system.md), [구현 방식](../architecture/systems/implementation-conventions.md).
+관련: [전투/데미지 시스템](../architecture/systems/combat/combat-damage-system.md), [구현 방식](../architecture/systems/foundation/implementation-conventions.md).

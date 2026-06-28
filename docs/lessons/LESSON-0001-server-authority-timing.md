@@ -16,4 +16,4 @@ tags: [lesson, system, combat]
 
 ## 적용 대상
 
-[전투/데미지](../architecture/systems/combat-damage-system.md), [스폰/리스폰](../architecture/systems/spawn-respawn-system.md), [이벤트 시스템](../architecture/systems/event-system.md).
+[전투/데미지](../architecture/systems/combat/combat-damage-system.md), [스폰/리스폰](../architecture/systems/meta/spawn-respawn-system.md), [이벤트 시스템](../architecture/systems/foundation/event-system.md).

@@ -29,13 +29,13 @@ flowchart TD
 
 | 시스템 | 책임 | 문서 |
 | --- | --- | --- |
-| 무기 | 무기 정의·발사·전환 | [weapon-system](./systems/weapon-system.md) |
-| 탄약/게이지 | 장탄·재장전·특수 자원 | [ammo-system](./systems/ammo-system.md) |
-| 전투/데미지 | 히트 판정·데미지·체력/쉴드 | [combat-damage-system](./systems/combat-damage-system.md) |
-| 스폰/리스폰 | 랜덤 스폰·무적·리스폰 | [spawn-respawn-system](./systems/spawn-respawn-system.md) |
-| 점수/랭크 | 포인트·1등·ESP·리벤지 | [scoring-rank-system](./systems/scoring-rank-system.md) |
-| UI/HUD | 체력·탄약·킬로그·알림 | [ui-hud-system](./systems/ui-hud-system.md) |
-| 이벤트 | RemoteEvent 통신 규칙 | [event-system](./systems/event-system.md) |
+| 무기 | 무기 정의·발사·전환 | [weapon-system](./systems/combat/weapon-system.md) |
+| 탄약/게이지 | 장탄·재장전·특수 자원 | [ammo-system](./systems/combat/ammo-system.md) |
+| 전투/데미지 | 히트 판정·데미지·체력/쉴드 | [combat-damage-system](./systems/combat/combat-damage-system.md) |
+| 스폰/리스폰 | 랜덤 스폰·무적·리스폰 | [spawn-respawn-system](./systems/meta/spawn-respawn-system.md) |
+| 점수/랭크 | 포인트·1등·ESP·리벤지 | [scoring-rank-system](./systems/meta/scoring-rank-system.md) |
+| UI/HUD | 체력·탄약·킬로그·알림 | [ui-hud-system](./systems/presentation/ui-hud-system.md) |
+| 이벤트 | RemoteEvent 통신 규칙 | [event-system](./systems/foundation/event-system.md) |
 
 ## 통신 원칙
 

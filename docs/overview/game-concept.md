@@ -21,4 +21,4 @@ tags: [overview, design]
 
 - **팀이 못해도 가능**: 무기 차별화와 무브먼트로 개인 기량이 빛나게.
 - **특색 있는 무기**: 일상 물건을 무기로 재해석해 정체성을 만든다.
-- 자세한 무기 목록은 [무기 시스템](../architecture/systems/weapon-system.md) 참고.
+- 자세한 무기 목록은 [무기 시스템](../architecture/systems/combat/weapon-system.md) 참고.

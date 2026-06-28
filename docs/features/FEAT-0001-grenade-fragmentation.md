@@ -9,7 +9,7 @@ tags: [feature, weapon, combat]
 | --- | --- |
 | 상태 | 구현됨 (코드 확인 2026-06-05) |
 | 구현 위치 | `StarterPack/CAN`(Tool: Client/ServerHandler), `GrenadeSystem/GrenadeConfig.CAN` |
-| 관련 시스템 | [무기](../architecture/systems/weapon-system.md), [전투](../architecture/systems/combat-damage-system.md) |
+| 관련 시스템 | [무기](../architecture/systems/combat/weapon-system.md), [전투](../architecture/systems/combat/combat-damage-system.md) |
 
 ## 왜 (의도)
 

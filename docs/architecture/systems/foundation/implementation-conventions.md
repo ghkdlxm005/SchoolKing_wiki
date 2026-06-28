@@ -1,4 +1,5 @@
 ---
+sidebar_position: 2
 title: 구현 방식 / 컨벤션 (Implementation)
 tags: [system, code, event]
 ---
@@ -31,7 +32,7 @@ Config: `GunConfig`, `GrenadeConfig`, `MeleeConfig`.
 ## 3. 서버 권위 (Server Authority)
 
 데미지/사망/생성/잔탄은 **서버가 확정**. 클라는 요청·연출만.
-데미지는 항상 `ShieldSystem.DealDamage`로 → 쉴드 먼저, 체력 나중. [전투 시스템](./combat-damage-system.md).
+데미지는 항상 `ShieldSystem.DealDamage`로 → 쉴드 먼저, 체력 나중. [전투 시스템](../combat/combat-damage-system.md).
 
 ## 4. 통신 (RemoteEvent) — 시스템별 Remotes 폴더
 
@@ -44,9 +45,9 @@ Config: `GunConfig`, `GrenadeConfig`, `MeleeConfig`.
 
 ## 5. 뷰모델 · 머즐 · 애니메이션
 
-- 뷰모델: `ReplicatedStorage.Viewmodels.<무기>VM`, PrimaryPart=HumanoidRootPart. → [리깅·머즐](./viewmodel-rigging.md)
+- 뷰모델: `ReplicatedStorage.Viewmodels.<무기>VM`, PrimaryPart=HumanoidRootPart. → [리깅·머즐](../presentation/viewmodel-rigging.md)
 - 머즐(발사점): `config.MuzzleFlashPart` 이름 파트의 위치.
-- 애니메이션: 1인칭/3인칭 분리. → [애니메이션 세트](./animation-system.md)
+- 애니메이션: 1인칭/3인칭 분리. → [애니메이션 세트](../presentation/animation-system.md)
 
 ## 6. 무기 타입별 구현 차이
 
