@@ -23,6 +23,7 @@ import DocCardList from '@theme/DocCardList';
 | [FEAT-0009](./FEAT-0009-fire-extinguisher-smoke.md) | 소화기 연막 시스템 (파괴·연막·리스폰) | 완료 | map/system | 2026-07 |
 | [FEAT-0010](./FEAT-0010-weapon-recoil.md) | 총기 수직 반동 (조준 누적·ADS 감소) | 완료 | weapon | 2026-07 |
 | [FEAT-0011](./FEAT-0011-score-hud-kill-feedback.md) | 점수판·킬 피드백 UI (등수·얼굴·사유·사운드) | 완료 · 재검증 | ui/system | 2026-07 |
+| [FEAT-0012](./FEAT-0012-sound-system.md) | 사운드 개편 (킬·사망·승리·관중 앰비언스) | 완료 · 밸런스 검토 | sound/system | 2026-07 |
 
 > 상태: `기획` → `구현 중` → `완료` → `보류`
 

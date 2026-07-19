@@ -37,16 +37,16 @@ flowchart LR
 
 | 위치 | 내용 |
 | --- | --- |
-| `ReplicatedStorage/GunSystem` | `GunConfig`(ModuleScript), `Remotes/`, `Sounds/`, `Animations/`, 탄환 메쉬 |
+| `ReplicatedStorage/GunSystem` | `GunConfig`(ModuleScript), `Recoil`(수직 반동), `SpreadState`, `Remotes/`, `Sounds/`, `Animations/`, 탄환 메쉬 |
 | `ReplicatedStorage/GrenadeSystem` | `GrenadeConfig`, `Remotes/`, `ProjectileTemplates/`, `Animations/` |
 | `ReplicatedStorage/MeleeSystem` | `MeleeConfig`, `Remotes/`, `Animations/` |
 | `ReplicatedStorage/Viewmodels` | 무기별 1인칭 뷰모델(CompassVM, LegCrutchVM, ToasterVM, CupVM, DustpanVM, SiliconGunVM …) |
-| `ReplicatedStorage/SharedFX` | `SlideTilt`, `RunTilt`, `ThirdPersonAnims` (공용 연출 모듈) |
-| `ServerScriptService` | `ShieldSystem`(module), `ShieldSystemInit`, `HealHandler`, `DeathShatter`, `DummyRespawn`, `DummyCloseShooter` |
-| `StarterPack/<무기>` | 무기 Tool = `ClientHandler`(LocalScript) + `ServerHandler`(Script) |
-| `StarterPlayer/StarterPlayerScripts` | `CustomFPCamera`, `WeaponEffectsClient`, `Sound3DListener`, `HealController`, `HandsController`, `AnimPreloader` |
+| `ReplicatedStorage/SharedFX` | `SlideTilt`, `RunTilt`, `ThirdPersonAnims`, `WeaponRig3P`(3인칭 무기 리깅) |
+| `ServerScriptService` | `ShieldSystem`(module), `ShieldSystemInit`, `HealHandler`, `RegenSystem`(HP 자동회복), `CapturePointSystem`(거점 점수·승리), `FireExtinguisherSystem`(소화기 연막), `RespawnSoundServer`, `BotManager`, `DeathShatter`, `DummyCloseShooter` |
+| `StarterPack/<무기>` | 무기 Tool = `ClientHandler`(LocalScript) + `ServerHandler`(Script) — Compass, LegCrutch, Toaster, SiliconGun, Cup, CAN, Dustpan |
+| `StarterPlayer/StarterPlayerScripts` | `CustomFPCamera`, `FaceCameraLock`, `WeaponEffectsClient`, `Sound3DListener`, `HealController`, `HandsController`, `AnimPreloader`, `DamageNumbers`(데미지 표기 통합), `EnemyOutline`, `OverheadShield`, `KillerReveal`, `ScoreHUD`(랭킹·획득 표시), `HUDResponsive`(해상도 대응), `MovementSounds`, `HitSounds`, `RespawnSound` |
 | `StarterPlayer/StarterCharacterScripts` | `SlideScript`, `Health`(기본 체력 자연재생 비활성화) |
-| `StarterGui/GameHUD` | `HUDController`, `CrosshairController` |
+| `StarterGui/GameHUD` | `HUDController`, `CrosshairController`, `CaptureHUDBinder`(점수·타이머 바인딩) |
 | `StarterGui/GunUI` | `GunUIController` |
 
 ## 무기 한 자루의 구조 (Tool 패턴)

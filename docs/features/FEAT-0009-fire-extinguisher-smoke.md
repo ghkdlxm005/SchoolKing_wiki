@@ -26,12 +26,15 @@ tags: [feature, map, system]
 ## 연막 가림 (EnemyOutline 연동)
 
 - `SmokeActive=true`인 연막만 가림 판정에 사용 → 숨겨진 연막은 시야를 막지 않는다.
-- **나 → 적 시선 선분이 연막 볼륨을 통과하면 윤곽 숨김**(slab 클립). 연막이 둘 사이에 껴 있어도(둘 다 밖) 가려짐. 단, **같은 연막 안에 둘 다** 있으면 서로 보임.
+- **적이 연막 볼륨 안에 있으면 윤곽 숨김.** 단 **나도 같은 연막 안**이면 서로 보인다.
+- 가려질 때는 윤곽뿐 아니라 **이름표·체력·머리 위 실드바**도 함께 숨는다(`SmokeHidden` 속성).
+
+> **철회된 확장**: 한때 *나→적 시선 선분이 연막을 통과하면 숨김*(둘 다 연막 밖이어도 가림, slab 클립 `segHitsSmoke`)으로 넓혔으나, 원래 판정으로 되돌렸다. 등수별 외곽선 색도 같은 이유(연막 가림 무시)로 철회됐다.
 
 ## 구현 위치
 
 - `ServerScriptService.FireExtinguisherSystem` (신규) — HP·회전·페이드·리스폰·사운드.
-- `StarterPlayer.StarterPlayerScripts.EnemyOutline` — `SmokeActive` 게이트 + 선분-연막 교차(`segHitsSmoke`).
+- `StarterPlayer.StarterPlayerScripts.EnemyOutline` — `SmokeActive` 게이트 + 연막 내부 판정(`inSmoke`), `SmokeHidden` 전파.
 - `ServerScriptService.RegenSystem` — `NoRegen` 모델 제외.
 
 ## 메모
