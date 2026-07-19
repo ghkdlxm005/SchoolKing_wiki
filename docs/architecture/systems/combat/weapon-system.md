@@ -18,7 +18,14 @@ tags: [system, weapon, ammo]
 | **Toaster** | 더블배럴 샷건 | **펠릿당 8** (헤드 1.5x) | 2 / 24 | 2.4s | semi | 사거리 120, 3단계 차지. **탄착군 9펠릿**(중앙1+팔각형8)=전탄 72 |
 | **SiliconGun** | 레이저(램핑) | 틱 3→9 (2초 램프) | 100 에너지 / 300 | 1.8s | auto | 헤드 없음, 사거리 50. **빔=barrel 앞면 끝, 소리 1회** ([FEAT-0003](../../../features/FEAT-0003-silicongun-rework.md)) |
 
-**Default 공통값**: 데미지 25, 헤드 2.0x, 팔다리 0.7x, 근접(V) 40·사거리 5·쿨 0.8s, 발사모드 B키 전환.
+**Default 공통값**: 데미지 25, 팔다리 0.7x, 근접(V) 40·사거리 5·쿨 0.8s, 발사모드 B키 전환.
+
+> ⚠️ **헤드샷 배율은 2026-07-12에 전 무기 1.5로 통일**됐다(표의 2.0x/1.8x는 그 이전 값). 헤드 판정 없는 레이저(SiliconGun)는 1.0 유지.
+
+### 반동 (2026-07-12)
+
+발사마다 **수직 반동**이 실제 조준 pitch에 누적된다(회복 없음 → 조준점이 계속 위로, 카메라 흔들림 없음). 연사 시 발당 추가 증가, **조준(ADS) 중에는 `AimRecoilMultiplier`로 완화**. 무기별 값은 GunConfig의 `RecoilVertical / RecoilProgressive / RecoilProgressiveMax / RecoilStreakResetTime / AimRecoilMultiplier`.
+→ [FEAT-0010](../../../features/FEAT-0010-weapon-recoil.md)
 
 ## 수류탄 (GrenadeSystem / GrenadeConfig)
 
