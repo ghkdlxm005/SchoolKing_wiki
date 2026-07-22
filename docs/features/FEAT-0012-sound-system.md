@@ -65,6 +65,7 @@ audience B:           [───── crowd_2 ─────]
 audience A:                      [───── crowd_1 ─────]  …
 ```
 
+- **같은 이름의 관중석을 전부 수집**한다. `audience A`/`B`가 각각 2개씩이라 `FindFirstChild`로는 절반만 소리가 났다. → [BUG-0014](../bugs/BUG-0014-audience-outline-and-ambience.md)
 - 각 관중석 모델의 **바운딩 박스 중심**에 방출용 파트를 만들고 그 위 6스터드에 배치.
 - `RollOffMinDistance = 100`, `MaxDistance = 800` — 맵 전역에서 들리되 **방향감은 유지**된다.
 - 다음 소리의 시작 시점은 `TimePosition >= TimeLength × 0.5` 로 판정. `TimeLength`가 0이면 로드될 때까지 최대 10초 대기한다.
@@ -83,6 +84,12 @@ audience A:                      [───── crowd_1 ─────]  …
 | `StarterPlayer.StarterPlayerScripts.MatchFlowHUD` | 수정 | 승자 표시 시 `victory`, 사운드 조회를 `ClientSFX` 경유로 |
 | `Workspace.Kill Sound Apex Legend` | **삭제** | `SFX.hit.kill`로 대체 |
 
+## 사운드 전수 점검
+
+툴박스 오디오는 언제든 보관 처리될 수 있다. 콘솔에 하나씩 뜨는 걸 기다리지 말고 한 번에 확인한다. 스크립트는 [LESSON-0005](../lessons/LESSON-0005-silent-failure.md) 참조.
+
+`TimeLength == 0`이면 로드 실패다. 2026-07-19 기준 **고유 사운드 59개 / 실패 0건**.
+
 ## 남은 과제
 
 **처치 순간에 관중 소리가 여러 겹으로 겹친다.** 현재 동시 출력은 다음과 같다.
@@ -95,6 +102,16 @@ audience A:                      [───── crowd_1 ─────]  …
 의도된 두께인지, 일부를 빼거나 볼륨을 낮출지 **실플레이 청취 후 결정** 필요.
 
 또한 `CrowdAmbience`의 시작·정지 조건을 `Phase == "playing"` 으로 잡았다. 라운드 사이에도 끊기지 않게 하려면 조건을 완화해야 한다.
+
+**무기 사운드는 아직 세 군데로 흩어져 있다.** 컴퍼스만 애니 마커 방식으로 정리됐고 나머지는 미구현이다. 추후 `SFX/<무기명>` 한 폴더로 모아 통일하기로 했다.
+
+| 위치 | 현재 내용 |
+| --- | --- |
+| `workspace.SFX` | `move` / `hit` / `compass_sound` / `crowd` |
+| `RS.GunSystem.Sounds` | `Compass`, `LegCrutch` 만 존재 |
+| `<Tool>.Handle` | LegCrutch · Toaster · SiliconGun 에 3D 사운드 2개씩 |
+
+목발·토스터·실리콘건은 발사음(`9341262362`)·재장전음(`138318339957104`)을 **완전히 공유**해 소리로 구분되지 않는다. `GunSystem.Sounds.LegCrutch.Melee`는 ID가 비어 있다.
 
 ## 변경 로그
 

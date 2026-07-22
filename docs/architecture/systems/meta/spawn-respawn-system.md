@@ -51,3 +51,22 @@ task.delay(5, function() char:SetAttribute("Invincible", false) end)
 무적 타이밍 관련 이력 → [BUG-0001](../../../bugs/BUG-0001-spawn-invincibility-timing.md), [BUG-0005](../../../bugs/BUG-0005-respawn-forcefield-sparkle.md)
 
 #system #spawn
+
+## 라운드 시작 배치 (2026-07-19)
+
+라운드가 끝나면 **캐릭터를 새로 생성**한다(`p:LoadCharacter()`). 위치만 옮기지 않는 이유는, 부활 경로를 그대로 타야 상태가 빠짐없이 초기화되기 때문이다.
+
+| 초기화 항목 | 담당 |
+| --- | --- |
+| 체력 · 쉴드 | `ShieldSystem` 캐릭터 생성 훅 |
+| 회복 아이템(책 3개) | `HealHandler` 캐릭터 생성 훅 |
+| 탄창 · 예비탄 | StarterPack 도구 재복제 |
+| 이동 버프(`SpeedBonus`) | 새 캐릭터라 속성 소멸 |
+
+배치는 스폰 지점을 셔플해 1인 1지점(A/B/C/D)으로 나누고, 스폰 지점이 바라보는 방향을 유지한다.
+
+:::warning SpawnDistributor와의 충돌
+`SpawnDistributor`는 `CharacterAdded`에 걸려 있어, 라운드 시작에도 자기 기준으로 다시 배치하려 든다. `MatchState.Phase == "starting"` 동안에는 건너뛰도록 가드가 들어가 있다. 라운드 배치 로직을 손볼 때 이 가드를 확인할 것.
+:::
+
+→ [BUG-0009](../../../bugs/BUG-0009-spawn-orientation-reset.md), [BUG-0012](../../../bugs/BUG-0012-viewmodel-left-behind.md)

@@ -22,6 +22,11 @@ tags: [overview]
 
 ## 2026-07
 
+- **2026-07-19** — **라운드 종료 리셋 개편**: 위치만 옮기던 것을 `LoadCharacter()`로 바꿔 **부활과 동일하게** 체력·쉴드·탄약·회복 아이템·버프를 전부 초기화. `SpawnDistributor`가 라운드 시작 배치를 덮어쓰지 않도록 가드 추가
+- **2026-07-19** — **뷰모델 잔존 버그 수정**: 라운드 리셋 시 무기 뷰모델이 제자리에 남던 문제. 무기 7종에 정리 훅 + `ViewmodelCleanup` 안전망 — [BUG-0012](./bugs/BUG-0012-viewmodel-left-behind.md)
+- **2026-07-19** — **컴퍼스 애니 마커 사운드 13개가 한 번도 재생되지 않던 문제 수정**(경로 오류 + nil 가드의 조용한 실패). 마커 바인딩을 전 트랙으로 확대하고 **옛 3D 경로·죽은 에셋 제거** — [BUG-0013](./bugs/BUG-0013-compass-marker-sound-path.md)
+- **2026-07-19** — **관중 정비**: 윤곽선 미제외 799명 태그, 관중석 9곳 중 2곳에서만 나던 함성을 전수 재생으로 수정 — [BUG-0014](./bugs/BUG-0014-audience-outline-and-ambience.md)
+- **2026-07-19** — 사운드 **전수 점검 방식 도입**(`PreloadAsync` + `TimeLength`). 고유 59개 중 **로드 실패 0건** 확인 — [LESSON-0005](./lessons/LESSON-0005-silent-failure.md)
 - **2026-07-19** — **등수별 캐릭터 외곽선 색 철회** — 1위 금색 외곽선이 연막 가림 판정을 무시하고 계속 보여, 외곽선은 흰색 단일로 환원. 연막 가림도 선분 교차 판정에서 **원래 판정(적이 연막 안이면 숨김)** 으로 되돌림 — [FEAT-0009](./features/FEAT-0009-fire-extinguisher-smoke.md)
 - **2026-07-19** — **사운드 개편**: 처치 `kill`(내 몸)+`kill_crowd_1/2`(관중석), 사망 `die`+`death_crowd`, 라운드 종료 `victory`(전원), 관중석 A↔B **50% 겹침 교대 앰비언스**(`crowd_1`/`crowd_2`) 신규. 재생 위치·청취 대상을 `ClientSFX` 모듈로 통합 — 전투 피드백 강화 · [FEAT-0012](./features/FEAT-0012-sound-system.md)
 - **2026-07-19** — 스폰 시 캐릭터가 **반대 방향을 보던 버그 수정**(`CFrame.new(위치)`가 회전을 초기화). 리스폰·라운드 시작 두 곳 모두 적용 — [BUG-0009](./bugs/BUG-0009-spawn-orientation-reset.md)
