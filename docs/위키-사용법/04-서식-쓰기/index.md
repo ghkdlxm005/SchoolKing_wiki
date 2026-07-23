@@ -34,7 +34,7 @@ sidebar_position: 5
 2. 순서 2
 ```
 
-## 체크리스트 ✅
+## 체크리스트 
 
 ```markdown
 - [x] 끝낸 일

@@ -1,5 +1,5 @@
 ---
-title: "✏️ 웹 편집기로 페이지 만들기 (제일 쉬움)"
+title: " 웹 편집기로 페이지 만들기 (제일 쉬움)"
 sidebar_position: 2
 ---
 
@@ -9,8 +9,8 @@ sidebar_position: 2
 
 ## 들어가기
 
-1. 위키 오른쪽 위의 **✏️ 편집** 을 누르거나, 주소창에 직접:
-   👉 **https://ghkdlxm005.github.io/SchoolKing_wiki/admin/**
+1. 위키 오른쪽 위의 ** 편집** 을 누르거나, 주소창에 직접:
+    **https://ghkdlxm005.github.io/SchoolKing_wiki/admin/**
 2. **Login with GitHub** 버튼을 누르고 GitHub 계정으로 로그인합니다.
    (처음이라면 GitHub 무료 가입 후, 민지에게 아이디를 알려주면 편집 권한을 넣어줍니다.)
 
