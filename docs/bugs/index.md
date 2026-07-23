@@ -26,6 +26,7 @@ import DocCardList from '@theme/DocCardList';
 | [BUG-0012](./BUG-0012-viewmodel-left-behind.md) | 라운드 리셋 후 뷰모델이 제자리에 남음 | high | fixed | weapon/ui |
 | [BUG-0013](./BUG-0013-compass-marker-sound-path.md) | 컴퍼스 애니 마커 사운드 전부 미재생 | high | fixed | sound/weapon |
 | [BUG-0014](./BUG-0014-audience-outline-and-ambience.md) | 관중 일부에만 윤곽선·함성 적용 | medium | fixed | ui/sound/map |
+| [BUG-0015](./BUG-0015-r15-slide-wall-clip.md) | R15 전환 후 슬라이딩 벽 통과 | high | fixed | movement/rig |
 
 > 상태: `열림(open)` → `수정 중` → `해결(fixed)` → `재발 감시`
 > 심각도: `critical` / `high` / `medium` / `low`

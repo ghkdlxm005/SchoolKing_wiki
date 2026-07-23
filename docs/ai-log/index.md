@@ -15,6 +15,7 @@ import DocCardList from '@theme/DocCardList';
 
 | 날짜 | 개발 항목 | 관련 |
 | --- | --- | --- |
+| [2026-07-23](./2026-07-23.md) | R15 슬라이딩 벽 통과 수정, 관중 처치/사망 사운드 A·B 재배치, 발소리 튜닝, 힐 취소 조건 축소, 콘솔 정리 | [BUG-0015](../bugs/BUG-0015-r15-slide-wall-clip.md), [FEAT-0012](../features/FEAT-0012-sound-system.md), [FEAT-0013](../features/FEAT-0013-r6-to-r15-migration.md) |
 | [2026-07-19](./2026-07-19.md) | 랭킹/점수 HUD, HUD 화면 맞춤(모바일), 거점 점수 틱·동기화, UI 미표시 버그 / 이동 V1.0.1, Monster Energy 아이템, 리스폰 분산, 피격 피드백 | [BUG-0007](../bugs/BUG-0007-hud-screengui-whitelist.md), [FEAT-0011](../features/FEAT-0011-score-hud-kill-feedback.md), [LESSON-0003](../lessons/LESSON-0003-buff-value-single-source.md) |
 
 <DocCardList />

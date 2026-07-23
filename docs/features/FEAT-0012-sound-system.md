@@ -44,29 +44,28 @@ tags: [feature, sound]
 | --- | --- | --- | --- |
 | `self_hit` | 내가 피격 | 2D | 나만 |
 | `kill` | 내가 처치 | 내 몸 | 나만 |
-| `kill_crowd_1` / `_2` (랜덤) | 내가 처치 | `audience Back` | 나만 |
+| `kill_crowd_1` / `_2` (랜덤) | 내가 처치 | `audience A·B` | **전원** |
 | `die` | 내가 사망 | 내 몸 | 나만 |
-| `death_crowd` | 내가 사망 | `audience Back` | 나만 |
+| `death_crowd` | 내가 사망 | `audience A·B` | 나만 |
 | `victory` | 라운드 종료(승자 표시) | 2D | **전원** |
 | `Crowd Cheering` | 처치 발생 | 관중석 8방향 | **전원** |
-| `crowd_1` / `crowd_2` | 게임 시작 후 상시 | `audience A` / `audience B` | **전원** |
+| `crowd_1` / `crowd_2` | 게임 시작 후 상시 | `audience Back` (3D, 교대) | **전원** |
 
 ## 관중 앰비언스 — A ↔ B 교대
 
 `ServerScriptService.CrowdAmbience` (신규)
 
-경기장 양쪽 관중석이 **번갈아 술렁이는** 느낌을 만들기 위해, 두 소리를 절반씩 겹쳐 순환시킨다.
+관중이 **번갈아 술렁이는** 느낌을 만들기 위해, 두 소리를 절반씩 겹쳐 순환시킨다. 방출 위치는 **`audience Back`** 관중석이다.
 
 ```
-audience A: [───── crowd_1 ─────]
-                      ↓ 50% 지점에서 시작
-audience B:           [───── crowd_2 ─────]
-                                 ↓ 50% 지점에서 시작
-audience A:                      [───── crowd_1 ─────]  …
+crowd_1: [───── crowd_1 ─────]
+                    ↓ 50% 지점에서 시작
+crowd_2:            [───── crowd_2 ─────]
+                               ↓ 50% 지점에서 시작
+crowd_1:                      [───── crowd_1 ─────]  …
 ```
 
-- **같은 이름의 관중석을 전부 수집**한다. `audience A`/`B`가 각각 2개씩이라 `FindFirstChild`로는 절반만 소리가 났다. → [BUG-0014](../bugs/BUG-0014-audience-outline-and-ambience.md)
-- 각 관중석 모델의 **바운딩 박스 중심**에 방출용 파트를 만들고 그 위 6스터드에 배치.
+- `audience Back` 모델(같은 이름 여럿이면 전부)의 **바운딩 박스 중심**에 방출용 파트를 만들고 그 위 6스터드에 배치. `FindFirstChild`는 동명 인스턴스 중 하나만 반환하므로 전수 수집한다. → [BUG-0014](../bugs/BUG-0014-audience-outline-and-ambience.md)
 - `RollOffMinDistance = 100`, `MaxDistance = 800` — 맵 전역에서 들리되 **방향감은 유지**된다.
 - 다음 소리의 시작 시점은 `TimePosition >= TimeLength × 0.5` 로 판정. `TimeLength`가 0이면 로드될 때까지 최대 10초 대기한다.
 - `MatchState.Phase == "playing"` 일 때만 동작하고, 그 외(승자 표시·카운트다운)에는 정지한다.
@@ -116,3 +115,4 @@ audience A:                      [───── crowd_1 ─────]  …
 ## 변경 로그
 
 - 2026-07-19: `ClientSFX` 도입, 킬·사망·승리 사운드 추가, 관중 A/B 교대 앰비언스 신규. `self_hit`은 내 몸 → **2D로 환원**(요청).
+- 2026-07-23: 처치/사망 관중음을 `audience Back` → **`audience A·B`** 로 이동. **처치는 전원 3D(서버), 사망은 본인만 3D(클라)**. `ClientSFX.AtAudienceAB` 추가. 배경 함성(`crowd_1/2`)만 Back 유지.

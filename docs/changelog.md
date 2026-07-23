@@ -22,6 +22,16 @@ tags: [overview]
 
 ## 2026-07
 
+### 2026-07-23
+
+- **R15 슬라이딩 벽 통과 수정** — R15 전환 부작용 3종(몸통 충돌 꺼짐 / 물리 루트 매프레임 텔레포트 / LinearVelocity 고force 관통). 몸통 충돌 유지 + 텔레포트→속도 스냅 + 전방 벽 감지로 해결 — [BUG-0015](./bugs/BUG-0015-r15-slide-wall-clip.md)
+- **관중 처치/사망 사운드 재배치** — `audience Back` → **`audience A·B`**. 처치 `kill_crowd`는 전원 3D(서버), 사망 `death_crowd`는 본인만 3D(클라). Back의 kill/death 재생 제거 — [FEAT-0012](./features/FEAT-0012-sound-system.md)
+- **발소리 튜닝** — 내 발소리 2D 유지, **상대 달리기 템포 1.3배**. 달리기 가속 구간에 걷기 소리가 섞이던 것(`IsRunState` 분리) 수정
+- **힐(쉴드) 취소 조건 축소** — 앉기(Ctrl)로 끊기던 것 제거, **달리기(Shift)만** 취소
+- **콘솔 정리** — Hoop Fever 어트랙트 스크립트 비활성화로 `Attract2`/`AttractFlashLight` 반복 에러 제거
+
+- **2026-07-19** — **R6 → R15 전환**: 아바타 타입 R15 고정 결정(플레이어 선택 미사용), 피격 판정은 유지. 리그 의존 스크립트 3곳(SlideScript·DummyCloseShooter·목발 3인칭 웰드) R15 대응. 애니메이션·오프셋 재작업 대기 — [FEAT-0013](./features/FEAT-0013-r6-to-r15-migration.md)
+- **2026-07-19** — 관중 배경 함성(`crowd_1`/`crowd_2` 50% 교대)을 `audience Back`에서 **3D로** 방출하도록 이동 — [FEAT-0012](./features/FEAT-0012-sound-system.md)
 - **2026-07-19** — **라운드 종료 리셋 개편**: 위치만 옮기던 것을 `LoadCharacter()`로 바꿔 **부활과 동일하게** 체력·쉴드·탄약·회복 아이템·버프를 전부 초기화. `SpawnDistributor`가 라운드 시작 배치를 덮어쓰지 않도록 가드 추가
 - **2026-07-19** — **뷰모델 잔존 버그 수정**: 라운드 리셋 시 무기 뷰모델이 제자리에 남던 문제. 무기 7종에 정리 훅 + `ViewmodelCleanup` 안전망 — [BUG-0012](./bugs/BUG-0012-viewmodel-left-behind.md)
 - **2026-07-19** — **컴퍼스 애니 마커 사운드 13개가 한 번도 재생되지 않던 문제 수정**(경로 오류 + nil 가드의 조용한 실패). 마커 바인딩을 전 트랙으로 확대하고 **옛 3D 경로·죽은 에셋 제거** — [BUG-0013](./bugs/BUG-0013-compass-marker-sound-path.md)
