@@ -17,6 +17,6 @@ import DocCardList from '@theme/DocCardList';
 
 > 팁: 각 문서의 프런트매터 `tags:`로도 묶입니다. 예) `tags: [system, weapon]`.
 
-## 📂 하위 문서
+## 하위 문서
 
 <DocCardList />

@@ -21,7 +21,7 @@ local origin = muzzlePart.Position            -- ← 발사가 나가는 곳
 local endPos = raycast(origin, camera.LookVector * config.MaxRange)
 ```
 
-➡️ **리깅에서 머즐 파트를 옮기면 발사 지점도 같이 움직인다.**
+ **리깅에서 머즐 파트를 옮기면 발사 지점도 같이 움직인다.**
 
 ## 무기별 머즐 파트 (기준점)
 

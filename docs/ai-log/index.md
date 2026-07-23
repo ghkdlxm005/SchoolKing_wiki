@@ -1,15 +1,14 @@
 ---
-title: AI 개발 로그 (AI Dev Log)
+title: 개발 일지 (Dev Log)
 sidebar_position: 1
 tags: [ai-log]
 ---
 
 import DocCardList from '@theme/DocCardList';
 
-# AI 개발 로그 (AI Dev Log)
+# 개발 일지 (Dev Log)
 
-날짜별 개발 기록. **설계·판단은 사람, 구현·디버깅은 AI(Claude)** 라는 역할 분담이 드러나도록 남긴다.
-각 로그의 핵심은 **개발 전후 비교 표** — 무엇이 어떻게 달라졌고, 어느 스크립트를 건드렸는지.
+날짜별 개발 내역. 무엇을 왜 바꿨는지, 어느 스크립트를 건드렸는지 개발 전후로 남긴다.
 
 새 로그는 `docs/_templates/ai-log.md`를 복사해 `YYYY-MM-DD.md`로 만든다.
 

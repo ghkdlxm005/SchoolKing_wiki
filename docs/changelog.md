@@ -1,5 +1,5 @@
 ---
-title: "📝 변경 이력 (Changelog)"
+title: " 변경 이력 (Changelog)"
 sidebar_position: 9
 slug: /changelog
 tags: [overview]
@@ -49,13 +49,13 @@ tags: [overview]
 
 ### 2026-07-12 — 소화기 연막 · 수직 반동 · 점수 UI · 사운드 대량 추가 · 다수 버그 수정
 
-**🔥 소화기 연막 시스템 (신규)** — → [FEAT-0009](./features/FEAT-0009-fire-extinguisher-smoke.md)
+** 소화기 연막 시스템 (신규)** — → [FEAT-0009](./features/FEAT-0009-fire-extinguisher-smoke.md)
 
 - **소화기(Fire Extinguisher)**: HP 10 부여 → 파괴 시 **캔처럼 기울여 회전 후 소멸**, 짝지어진 연막이 **20초 발동**(3초에 걸쳐 서서히 나타났다 사라짐), **30초 후 원위치 리스폰**. 기존 연막은 평소 **투명(숨김)**, 발동 시에만 등장. 연한 **노란 윤곽** + 파괴 순간부터 분사 사운드(`Smoke Grenade`, 0.5). (`ServerScriptService.FireExtinguisherSystem`)
 - **연막 가림 판정**: `SmokeActive` 속성으로 활성 연막만 판정. **적이 연막 안이면 윤곽 숨김**(내가 같은 연막 안이면 보임), 이름표·체력·실드바도 함께 숨김.
   - ~~시선 선분이 연막을 통과하면 숨김(둘 다 밖이어도 가림)~~ → **2026-07-19 철회**, 원래 판정으로 환원.
 
-**⚔️ 전투/무기**
+** 전투/무기**
 
 - **수직 반동 도입** ([FEAT-0010](./features/FEAT-0010-weapon-recoil.md)): 발사마다 조준이 위로 누적(연사 시 progressive 증가), **카메라 흔들림 없이 실제 조준 pitch에 누적**(마우스가 계속 올라가는 방식, 회복 없음). **조준(ADS) 시 감소**. 전체 세기는 GunConfig 무기별 값의 **30%**로 조정. (`ReplicatedStorage.GunSystem.Recoil`, `CustomFPCamera`)
 - **데미지 표기 개편** ([BUG-0006](./bugs/BUG-0006-damage-number-duplicate.md)): 단일 데미지는 **부위별 색**(머리 노랑/몸통 흰색/팔다리 회색)으로 **좌측**, **합산은 우측**에 누적 표시. 백팩 무기별 중복으로 **한 발에 여러 개 뜨던 문제 해결**(공유 `DamageNumbers` 하나로 통합 + 히트마커). 투사체(**캔 폭발·컵 파편**) 데미지도 숫자 표시 + 벽 투시.
@@ -63,35 +63,35 @@ tags: [overview]
 - **컴퍼스 들기 모션 1.5배속**(장착 잠금 시간도 길이÷1.5로 정합).
 - **유리컵 조정**: 범위 반지름 **3.5**, 파편 수 **50**(절반), 파편 외곽선 **0.002**로 매우 얇게. 기존 폭발음 제거 → `Glass Bottle Break`로 교체.
 
-**♻️ 리스폰 개편** — → [BUG-0005](./bugs/BUG-0005-respawn-forcefield-sparkle.md)
+** 리스폰 개편** — → [BUG-0005](./bugs/BUG-0005-respawn-forcefield-sparkle.md)
 
 - **스폰 반짝이(ForceField) 제거**: SpawnLocation `Duration` 전부 0 + 스폰 즉시 ForceField 파괴(3개가 Duration=10이라 계속 생기던 것이 원인).
 - **5초 무적을 스폰 순간 즉시 적용**(리스폰 실드 피해 버그 방지), 엔진 무적이 덮던 것 제거.
 - **회복 아이템(책) 리스폰 시 재충전**. 쉴드 최대 **100**, 책 최대 소지 **5**.
 
-**🏆 점수/UI** — → [FEAT-0011](./features/FEAT-0011-score-hud-kill-feedback.md)
+** 점수/UI** — → [FEAT-0011](./features/FEAT-0011-score-hud-kill-feedback.md)
 
 - **점수판(우상단)**: **등수**(1~3위 금·은·동)·**프로필 얼굴**·점수 표시, 본인 강조. **킬 획득 사유**(처치 / 거점 처치 / N연속 처치)를 **흰 글씨**로 팝업.
   - → **2026-07-19 개편**: 위치 **상단 중앙**(최대 4명), 갱신 **이벤트 기반**, 사유 **영어 표기**, 본인 표시 **흰 테두리**. [FEAT-0011](./features/FEAT-0011-score-hud-kill-feedback.md)
 - **크로스헤어 점(dot)만** — 십자선 제거.
 
-**🔊 사운드**
+** 사운드**
 
 - **킬 사운드(Apex)** — 킬한 **본인만** 2D로 청취. → **2026-07-19 교체**: `kill`(내 몸) + `kill_crowd_1`/`_2`(관중석). [FEAT-0012](./features/FEAT-0012-sound-system.md)
 - **관중 환호** — 킬 시 **관중석 8방향**에서 울림(맵 바깥 스탠드 좌석 기준 배치).
 - **캔**: 폭발 시 `water splash`(0.8), 첫 바운스 시 `Drop soda can`(1회, 끝까지 재생).
 - 이동/피격/리스폰 사운드 정비(기존).
 
-**🏃 이동**
+** 이동**
 
 - **달리기 자동 재개**: 좌우 스트레이프/후진 후 다시 전진하면 **자동으로 달리기 복귀**(달리기 의도 유지, Shift 재입력 불필요). 지면에서 완전히 멈추면 해제.
 
-**🐞 버그 수정**
+** 버그 수정**
 
 - **실리콘건·토스터 든 채 슬라이딩 시 하늘로 날아가는 버그** ([BUG-0004](./bugs/BUG-0004-slide-launch-viewmodel-raycast.md)): 슬라이드 지면 스냅 레이캐스트가 **카메라 밑 뷰모델 파트를 바닥으로 오인**해 매 프레임 끌어올리던 것 → 레이캐스트에서 **카메라(뷰모델) 제외 + 실제 충돌 바닥(CanCollide)만 인정**. (목발 3인칭 리깅 작업 중 유입된 이슈)
 - 데미지 숫자 중복 표시, 투사체·컵 파편 데미지 미표시 수정.
 
-> ⚠️ 알려진 이슈: 랭킹 점수판 UI 표시 재확인 필요(런타임 검증 예정).
+>  알려진 이슈: 랭킹 점수판 UI 표시 재확인 필요(런타임 검증 예정).
 
 ### 2026-07-08 — 쉴드 책 리스폰·탈취 · 슬라이드/3인칭 애니 정리 · 컴퍼스 재장전
 
@@ -99,7 +99,7 @@ tags: [overview]
 - **컴퍼스 재장전 총 움직임 수정**: Tilt(Action2, 스웨이)가 총 본체(Main)를 붙잡아 재장전 시 **팔만 움직이고 총이 정지**하던 문제 → **Reload 우선순위 Action3**로 올려 정상화(1인칭 뷰모델). Fire의 스웨이 우선 설계는 유지.
 - **컴퍼스 단발 사격음 → `shot_1`**: 본인 2D(`GunSystem.Sounds.Compass.Fire`)·상대 3D(`Handle.FireSound3D`) 모두 `compass_sound.shot_1`(id `95763476304057`)로 통일.
 - **3인칭 애니 우선순위 레이어링**: 상체 홀드·조준=Action2, 사격·재장전·들기=Action3, 슬라이드=Action. **팔·상체는 무기 애니, 다리는 슬라이드**가 담당 → 슬라이드 중에도 사격 동시 적용, 사격이 홀드 위로 깔끔히 표시. ([애니메이션](./architecture/systems/presentation/animation-system.md))
-  - ⚠️ 애니 우선순위는 **업로드 시 구워진(baked) 값**이 상대 화면에 쓰임 — 런타임 `track.Priority`는 본인 화면만 적용될 수 있음. 상대에게도 정확히 보이려면 애니 편집기에서 Priority 지정 후 업로드 필요.
+  - 애니 우선순위는 **업로드 시 구워진(baked) 값**이 상대 화면에 쓰임 — 런타임 `track.Priority`는 본인 화면만 적용될 수 있음. 상대에게도 정확히 보이려면 애니 편집기에서 Priority 지정 후 업로드 필요.
 - **슬라이드 포즈 유지**: 1프레임 슬라이드 애니를 재생 후 `AdjustSpeed(0)`으로 **포즈 고정**(루프 아님), 종료 시 기본 동작 복귀.
 - **슬라이드 "떠 보임" 수정**: R6라 슬라이드 중에도 서있는 높이여서 서서 미끄러지듯 보이던 것 → 슬라이드 동안 **HipHeight −1.5로 낮춤**, 종료 시 복귀(값 조절 가능).
 
@@ -120,7 +120,7 @@ tags: [overview]
 ### 2026-06-30 — 거점 점령전 구현 + 힙파이어/크로스헤어 + 위키 보강
 
 - **거점 점령전 1·2단계 구현**: 거점 점수(혼자=↑/둘 다=정지) + 1000점·5분 승리·라운드. 점수 속도 4/s, 거점 감지 영역 확대. → [FEAT-0005](./features/FEAT-0005-capture-point.md)
-  - ⚠️ `거점 파트` 오브젝트는 추후 변경될 수 있음(시스템은 CFrame·Size를 그대로 사용).
+  - `거점 파트` 오브젝트는 추후 변경될 수 있음(시스템은 CFrame·Size를 그대로 사용).
 - **스카우터 제거**: ADS 스코프 오버레이 삭제, **화면 중앙 크로스헤어(힙파이어 에임) 상시 표시**. → [FEAT-0006](./features/FEAT-0006-hipfire-accuracy.md)
 - **힙파이어 정확도**: `SpreadState` 공유 모듈로 이동/공중 상태별 탄퍼짐 + **다이내믹 크로스헤어**(무기 base Spread 연동). 레이저=고정, 샷건=넓게.
 - **위키 보강(26.06.21 기획 반영)**: [게임 모드(거점 점령전)](./overview/game-mode.md) 신규 문서, 파밍 시스템·실리콘 슬로우(미구현)·크로스헤어 장탄 UI 기획을 백로그/HUD 문서에 반영.
@@ -128,7 +128,7 @@ tags: [overview]
 ### 2026-06-28 — SiliconGun 사격 포즈 + 위키 재구성
 
 - **실리콘건 사격 포즈**: Fire 애니(`138179196835705`) 등록, 탄약비례 포즈 스크럽 + **연속사격 부들거림**(0→50발 램프, 손 떼면 리셋). → [FEAT-0004](./features/FEAT-0004-silicongun-fire-pose.md)
-- **위키 재구성**: 사이드바 자동 접기(현재 섹션만 펼침), 게임 시스템 10개 → 4그룹(⚔️전투 / 🎨표현 / 🔁게임루프 / 🧱기반), 홈을 "지금 뭐 하려고 왔나요?" 행동형 허브로 — 가독성·집중도 개선.
+- **위키 재구성**: 사이드바 자동 접기(현재 섹션만 펼침), 게임 시스템 10개 → 4그룹(전투 / 표현 / 게임루프 / 기반), 홈을 "지금 뭐 하려고 왔나요?" 행동형 허브로 — 가독성·집중도 개선.
 
 ### 2026-06-26 — 무기·힐 시스템 수정 (스쿨 킹 공동 작업실)
 
@@ -142,7 +142,7 @@ tags: [overview]
 - **CAN**: 임시 뷰모델 CANVM 적용 + **쉴드 우선 데미지로 수정**. → [BUG-0002](./bugs/BUG-0002-can-shield-bypass.md), [LESSON-0002](./lessons/LESSON-0002-damage-via-shieldsystem.md)
 
 - **2026-06-24** — SiliconGun 애니메이션은 미구현 상태로 명시(추후 적용 예정), TODO 등록.
-- **2026-06-24** — 🧱 **전체 베이스라인 확립**: 총기 시스템·리깅·머즐·애니메이션 세트·구현 방식을 오늘 코드 기준으로 전부 문서화. 신규 [애니메이션 세트](./architecture/systems/presentation/animation-system.md), [구현 방식](./architecture/systems/foundation/implementation-conventions.md), [리깅·머즐](./architecture/systems/presentation/viewmodel-rigging.md)(근접·수류탄 포함). 이후 모든 변경은 이 기준점과 비교.
+- **2026-06-24** —  **전체 베이스라인 확립**: 총기 시스템·리깅·머즐·애니메이션 세트·구현 방식을 오늘 코드 기준으로 전부 문서화. 신규 [애니메이션 세트](./architecture/systems/presentation/animation-system.md), [구현 방식](./architecture/systems/foundation/implementation-conventions.md), [리깅·머즐](./architecture/systems/presentation/viewmodel-rigging.md)(근접·수류탄 포함). 이후 모든 변경은 이 기준점과 비교.
 - **2026-06-24** — 전 총기(Compass·LegCrutch·Toaster·SiliconGun) 뷰모델 리깅·머즐 기준점 기록 — 머즐 파트·MeshId·Weld/Motor6D 허브 구조 표로 정리 → [리깅·머즐 문서](./architecture/systems/presentation/viewmodel-rigging.md)
 - **2026-06-05** — 위키에 흑백 테마 적용, 카테고리 페이지에 하위문서 카드 추가 — 가독성·탐색성 개선
 - **2026-06-05** — Roblox 코드 분석 문서화: [코드 구조](./architecture/code-structure.md), [무기 시스템](./architecture/systems/combat/weapon-system.md) 실수치 반영 — 구현과 문서 동기화

@@ -67,5 +67,5 @@ tags: [overview, design]
 
 - **1·2단계 구현됨 (2026-06-30)**: 거점 점수(혼자=↑/둘 다=정지) + 1000점·5분 승리·라운드. → [FEAT-0005](../features/FEAT-0005-capture-point.md)
 - 미구현: 거점 안 처치 보너스, 4모서리 스폰, 파밍 → [백로그](../todo/backlog.md)
-- ⚠️ `거점 파트` 오브젝트는 추후 변경될 수 있음(시스템은 그 파트의 CFrame·Size를 그대로 사용).
+- `거점 파트` 오브젝트는 추후 변경될 수 있음(시스템은 그 파트의 CFrame·Size를 그대로 사용).
 - 기존 [점수/랭크 시스템](../architecture/systems/meta/scoring-rank-system.md)은 데스매치 기준 서술 — 거점 점령전과 정합 필요.

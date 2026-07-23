@@ -31,6 +31,6 @@ import DocCardList from '@theme/DocCardList';
 > 상태: `열림(open)` → `수정 중` → `해결(fixed)` → `재발 감시`
 > 심각도: `critical` / `high` / `medium` / `low`
 
-## 📂 하위 문서
+## 하위 문서
 
 <DocCardList />

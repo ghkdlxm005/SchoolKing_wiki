@@ -28,6 +28,6 @@ import DocCardList from '@theme/DocCardList';
 
 > 상태: `기획` → `구현 중` → `완료` → `보류`
 
-## 📂 하위 문서
+## 하위 문서
 
 <DocCardList />

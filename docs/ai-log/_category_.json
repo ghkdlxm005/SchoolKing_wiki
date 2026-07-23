@@ -1,9 +1,9 @@
 {
-  "label": "🤖 AI 개발 로그",
+  "label": "개발 일지",
   "position": 8,
   "link": {
     "type": "generated-index",
-    "description": "날짜별 개발 기록. 사람이 설계·판단하고 AI가 구현·디버깅한 내용을 개발 전후 비교로 남긴다."
+    "description": "날짜별 개발 내역. 무엇을 왜 바꿨는지, 어느 스크립트를 건드렸는지 개발 전후로 남긴다."
   },
   "collapsed": true
 }

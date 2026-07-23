@@ -21,6 +21,6 @@ import DocCardList from '@theme/DocCardList';
 - [ ] 수류탄 서버 핸들러 구현 ([FEAT-0001](../features/FEAT-0001-grenade-fragmentation.md))
 - [ ] 1등/ESP/리벤지 UI ([점수/랭크](../architecture/systems/meta/scoring-rank-system.md))
 
-## 📂 하위 문서
+## 하위 문서
 
 <DocCardList />
