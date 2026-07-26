@@ -112,7 +112,34 @@ crowd_1:                      [───── crowd_1 ─────]  …
 
 목발·토스터·실리콘건은 발사음(`9341262362`)·재장전음(`138318339957104`)을 완전히 공유해 소리로 구분되지 않는다. `GunSystem.Sounds.LegCrutch.Melee`는 ID가 비어 있다.
 
+## 환경·상호작용 사운드 (2026-07-26)
+
+맵 오브젝트 상호작용에 사운드를 붙였다. 모두 3D(위치 기반), 전원 청취.
+
+`ServerScriptService.EnvironmentSFX` (신규) — 터치 감지 + 1초 디바운스로 재생한다.
+
+| 대상 | 판별 | 사운드 | 재생 위치 |
+| --- | --- | --- | --- |
+| 점프대 (JUMP DAE ×4) | `conveyorScript` 보유 파트 | `object/jump_platform` | 밟은 지점 |
+| 경고등 (Alarm L·R) | 점프대 하위 | `object/gym_spot` | 경고등 지점 |
+| 가속기 (Speed ×4) | `conveyorScript` 보유 파트 | `object/booster` | 밟은 지점 |
+| 중앙 리프트 (Lift ×2) | `Jump Pad` 파트 | `object/lift` | 리프트 지점 |
+
+- 대상은 이름 하드코딩이 아니라 `conveyorScript` 보유 여부로 판별한다. 맵에 점프대가 추가돼도 자동 인식된다. → [LESSON-0005](../lessons/LESSON-0005-silent-failure.md)
+- `gym_spot`(경고등)은 에셋 미업로드 상태다. `SFX.object.gym_spot`에 SoundId만 넣으면 즉시 동작하며, 빈 ID면 조용히 스킵된다(에러 없음).
+
+## 아이템 획득 사운드 (2026-07-26)
+
+- 책(`HealHandler`) 획득 시 링 위치에서 `move/item_pickup` 재생.
+- 부스트 음료(`MonsterEnergySystem`) 획득(`consume`) 시 아이템 위치에서 `move/item_pickup` 재생.
+
+## 관중 함성 교체 (2026-07-26)
+
+배경 함성을 `crowd_1`/`crowd_2` → **`crowd_1_fix`/`crowd_2_fix`**로 교체했다. 방출 위치는 `audience Back` 그대로 두고, 교대 순서를 고정 순환에서 **랜덤 선택**으로 바꿨다.
+
 ## 변경 로그
 
 - 2026-07-19: `ClientSFX` 도입, 킬·사망·승리 사운드 추가, 관중 A/B 교대 앰비언스 신규. `self_hit`은 내 몸 → 2D로 환원(요청).
 - 2026-07-23: 처치/사망 관중음을 `audience Back` → `audience A·B`로 이동. 처치는 전원 3D(서버), 사망은 본인만 3D(클라). `ClientSFX.AtAudienceAB` 추가. 배경 함성(`crowd_1/2`)만 Back 유지.
+- 2026-07-26: 환경 사운드(점프대·경고등·가속기·리프트) `EnvironmentSFX` 신규. 아이템 획득음(책·부스트 음료) 추가. 관중 함성 `crowd_*_fix` 랜덤 교체. `gym_spot`(경고등)은 에셋 미업로드 — 자리만 생성.
+- 2026-07-26: 컴퍼스 사격음(`shot_1`) 코드 트리거(Fire 애니에 마커 없음) + 타인 3D 전파, 재장전 3D 시퀀스(마커 시점). 토스터 목발 기본 소리(발사 `9341262362`·재장전 `138318339957104`) 제거 → `SFX.toaster` 전면 교체(발사·조준 2D+3D, 장전은 애니 마커). 컴퍼스 장전(`105435766235673`)·토스터 장전(`131002834663702`) 애니 교체 + 토스터 마커→`SFX.toaster` 바인딩 신설.

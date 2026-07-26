@@ -22,6 +22,19 @@ tags: [overview]
 
 ## 2026-07
 
+### 2026-07-26
+
+- **환경 사운드 추가** — 점프대(`jump_platform`)·경고등(`gym_spot`)·가속기(`booster`)·중앙 리프트(`lift`)에 터치 사운드. 신규 `EnvironmentSFX`, `conveyorScript` 보유로 자동 판별(이름 하드코딩 없음) — [FEAT-0012](./features/FEAT-0012-sound-system.md)
+- **아이템 획득 사운드** — 책·부스트 음료 획득 시 획득 위치에서 `item_pickup` — [FEAT-0012](./features/FEAT-0012-sound-system.md)
+- **관중 함성 교체** — `crowd_1/2` → `crowd_1_fix/2_fix`, 위치(audience Back)는 유지하고 랜덤 재생으로 변경 — [FEAT-0012](./features/FEAT-0012-sound-system.md)
+- **미완** — `gym_spot`(경고등) 에셋 미업로드. `SFX.object.gym_spot`에 SoundId 필요
+- **앉기+W 미동작(Studio 한정)** — `Ctrl+W`를 Studio가 단축키로 가로채 W가 게임에 안 들어옴. 코드 무결, 실플레이어 정상 — [BUG-0016](./bugs/BUG-0016-crouch-forward-studio-ctrlw.md) · [LESSON-0006](./lessons/LESSON-0006-input-not-code.md)
+- **1인칭 뷰모델 벽 관통 방지** — 레이캐스트 retract로 총을 카메라 쪽으로 당김. 총은 월드에 그대로라 조명·그림자·파티클 유지. ViewportFrame(조명·파티클 상실)·모델 축소(FakeCamera 충돌)는 대가 커서 폐기 — [FEAT-0014](./features/FEAT-0014-viewmodel-wall-clip.md) · [LESSON-0007](./lessons/LESSON-0007-viewmodel-wall-clip.md)
+- **1인칭 본인 그림자** — 몸은 숨기되 그림자는 유지(`CastShadow` 보장, `GlobalShadows`) — [FEAT-0014](./features/FEAT-0014-viewmodel-wall-clip.md)
+- **사운드 재배선** — 컴퍼스 사격음(`shot_1`) 코드 트리거 + 타인 3D 전파, 재장전 3D 시퀀스. 토스터는 목발 기본 소리(9341262362/138318339957104) 제거하고 `SFX.toaster`로 전면 교체(발사·조준·장전, 본인 2D + 타인 3D) — [FEAT-0012](./features/FEAT-0012-sound-system.md)
+- **애니 마커 사운드 확대** — 컴퍼스 장전 애니 교체(compass_sound 마커 자동 재생), 토스터 장전 애니 + `SFX.toaster` 마커 바인딩 신설 — [FEAT-0008](./features/FEAT-0008-compass-anim-sound-events.md) · [FEAT-0012](./features/FEAT-0012-sound-system.md)
+- **3인칭 확장** — 목발 재장전·달리기 애니, 투척물(컵·캔) 던지기 Stop-마커 상태머신 + `r15 can` 리그 손 웰드, 책 힐 3인칭 애니 + `r15 book` 프롭 웰드(`BookHealRig`) — [FEAT-0013](./features/FEAT-0013-r6-to-r15-migration.md)
+
 ### 2026-07-23
 
 - **R15 슬라이딩 벽 통과 수정** — R15 전환 부작용 3종(몸통 충돌 꺼짐 / 물리 루트 매프레임 텔레포트 / LinearVelocity 고force 관통). 몸통 충돌 유지 + 텔레포트→속도 스냅 + 전방 벽 감지로 해결 — [BUG-0015](./bugs/BUG-0015-r15-slide-wall-clip.md)

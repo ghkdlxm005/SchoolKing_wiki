@@ -25,6 +25,7 @@ import DocCardList from '@theme/DocCardList';
 | [FEAT-0011](./FEAT-0011-score-hud-kill-feedback.md) | 점수판·킬 피드백 UI (등수·얼굴·사유·사운드) | 완료 · 재검증 | ui/system | 2026-07 |
 | [FEAT-0012](./FEAT-0012-sound-system.md) | 사운드 개편 (킬·사망·승리·관중 앰비언스) | 완료 · 밸런스 검토 | sound/system | 2026-07 |
 | [FEAT-0013](./FEAT-0013-r6-to-r15-migration.md) | R6 → R15 전환 | 스크립트 완료 · 애니 재작업 대기 | rig/character | 2026-07 |
+| [FEAT-0014](./FEAT-0014-viewmodel-wall-clip.md) | 1인칭 뷰모델 벽 관통 방지(retract) | 완료 | viewmodel/render | 2026-07 |
 
 > 상태: `기획` → `구현 중` → `완료` → `보류`
 
