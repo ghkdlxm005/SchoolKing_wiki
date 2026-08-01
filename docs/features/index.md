@@ -26,6 +26,7 @@ import DocCardList from '@theme/DocCardList';
 | [FEAT-0012](./FEAT-0012-sound-system.md) | 사운드 개편 (킬·사망·승리·관중 앰비언스) | 완료 · 밸런스 검토 | sound/system | 2026-07 |
 | [FEAT-0013](./FEAT-0013-r6-to-r15-migration.md) | R6 → R15 전환 | 스크립트 완료 · 애니 재작업 대기 | rig/character | 2026-07 |
 | [FEAT-0014](./FEAT-0014-viewmodel-wall-clip.md) | 1인칭 뷰모델 벽 관통 방지(retract) | 완료 | viewmodel/render | 2026-07 |
+| [FEAT-0015](./FEAT-0015-looting-rework.md) | 루팅 개편(책 드롭·근접 흡수) | 완료 | heal/loot | 2026-08 |
 
 > 상태: `기획` → `구현 중` → `완료` → `보류`
 
