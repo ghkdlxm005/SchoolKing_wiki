@@ -13,6 +13,9 @@ import DocCardList from '@theme/DocCardList';
 
 ## 지금 우선순위 (Next Up)
 
+- [ ] **캔/컵 유리벽 부수기 디버깅** — 관통·파괴 타이밍/딜레이/여러 장 관통 정밀 검증 ([FEAT-0020](../features/FEAT-0020-grenade-accuracy-glass.md))
+- [ ] 파쿠르 SPACE=점프 충돌 → ContextActionService로 분리 + 3인칭 파쿠르 연출 ([FEAT-0021](../features/FEAT-0021-parkour-glass-break.md))
+- [ ] `error`(맵 이탈 경고음) — 경계(투명벽) 감지 시스템 필요 · `kill_crowd_1` 에셋 업로드
 - [x] SiliconGun 1인칭 애니 일부 적용 (Equip/Reload/Tilt/Run) — 2026-06-26
 - [ ] SiliconGun 나머지 애니 (Idle/AimIn/AimOut/Melee) 등록
 - [ ] CAN 정식 리깅 뷰모델 (현재 CupVM 임시)

@@ -19,6 +19,8 @@ import DocCardList from '@theme/DocCardList';
 | [LESSON-0005](./LESSON-0005-silent-failure.md) | 조용히 실패하는 코드를 만들지 않는다 | [BUG-0012](../bugs/BUG-0012-viewmodel-left-behind.md), [BUG-0013](../bugs/BUG-0013-compass-marker-sound-path.md), [BUG-0014](../bugs/BUG-0014-audience-outline-and-ambience.md) |
 | [LESSON-0006](./LESSON-0006-input-not-code.md) | 특정 키만 안 먹히면 코드보다 입력 도달을 먼저 본다 | [BUG-0016](../bugs/BUG-0016-crouch-forward-studio-ctrlw.md) |
 | [LESSON-0007](./LESSON-0007-viewmodel-wall-clip.md) | 1인칭 뷰모델 벽 관통: ViewportFrame은 함정(조명·파티클 상실), retract 채택 | [FEAT-0014](../features/FEAT-0014-viewmodel-wall-clip.md) |
+| [LESSON-0008](./LESSON-0008-ui-keepgui-whitelist.md) | 새 UI는 반드시 KEEP_GUI 화이트리스트에 등록한다 | AbilityHUD 미등록으로 sweep에 꺼짐 |
+| [LESSON-0009](./LESSON-0009-hitbox-vs-visual.md) | 판정 부피는 시각(메시 스케일)과 다르다 · 은폐는 시선 차단으로 | [FEAT-0019](../features/FEAT-0019-smoke-concealment.md) |
 
 ## 하위 문서
 

@@ -28,6 +28,8 @@ import DocCardList from '@theme/DocCardList';
 | [BUG-0014](./BUG-0014-audience-outline-and-ambience.md) | 관중 일부에만 윤곽선·함성 적용 | medium | fixed | ui/sound/map |
 | [BUG-0015](./BUG-0015-r15-slide-wall-clip.md) | R15 전환 후 슬라이딩 벽 통과 | high | fixed | movement/rig |
 | [BUG-0016](./BUG-0016-crouch-forward-studio-ctrlw.md) | 앉은 채 W가 Studio에서만 안 먹힘 | low | 환경 원인 | movement/input |
+| [BUG-0017](./BUG-0017-rig-limbs-welded.md) | 3인칭 리그 팔다리가 캐릭터에 웰드(파란 몸) | mid | 리그 판별 누락 | rig |
+| [BUG-0018](./BUG-0018-heal-busy-stuck.md) | 힐 도중 사망 시 healBusy 박제 → 책 안 먹힘 | mid | 상태 미해제 | heal |
 
 > 상태: `열림(open)` → `수정 중` → `해결(fixed)` → `재발 감시`
 > 심각도: `critical` / `high` / `medium` / `low`

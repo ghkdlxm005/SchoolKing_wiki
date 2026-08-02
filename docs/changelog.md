@@ -22,6 +22,26 @@ tags: [overview]
 
 ## 2026-08
 
+### 2026-08-02
+
+- **수류탄 착탄 정확도 + 유리벽 관통** — Cup을 결정론적 궤적으로 바꿔 조준 프리뷰(착탄 링)와 실제 폭발 지점이 1:1 일치(물리 볼의 벽 과인지 제거). Cup/CAN이 유리벽을 깨고 통과해 원래 착탄점까지 진행(Cup은 착탄 레이캐스트, CAN은 충돌 그룹+경로 레이캐스트). Cup 폭발음(`cup_explode`, DOT 경로) 배선, 컵 장판 밟으면 이속 -10 — [FEAT-0020](./features/FEAT-0020-grenade-accuracy-glass.md)
+- **파쿠르 — 유리벽 SPACE 파괴** — 유리벽 근처에서 SPACE 프롬프트 → 파괴(기능만, 3인칭 연출 추후) — [FEAT-0021](./features/FEAT-0021-parkour-glass-break.md)
+- **효과음 배선** — 투척류 can/cup의 hold/ready/throw/explode/sparkle, silicon_hold·dustpan_hold, 실리콘 장전 3인칭 애니(`93584166771428`) + 키프레임 마커 사운드(silicon_ready/reload_1/reload_2). 기존 임시음(water splash·Drop soda can·Glass Bottle Break) 제거 — [FEAT-0008](./features/FEAT-0008-compass-anim-sound-events.md) · [FEAT-0012](./features/FEAT-0012-sound-system.md)
+- **정리** — 유리벽 반사(Reflectance 0.7→0.5, 하늘 미러→광원 반응), 실리콘의 목발 사운드 제거, "Loaded anims"(Tilt) 디버그 print 제거, 연막 판정 디버그 오버레이 제거.
+- **아이템 랜덤 능력 시스템** — Monster Energy 픽업 효과를 이속 버프에서 3종 랜덤 능력(무한탄창·무한수류탄·은신, 각 10초)으로 교체. 능력별 색 파워업 연출(중앙 배너·화면 플래시·가장자리 글로우·카운트다운), 픽업 이속 +5/슬라이딩 +10, 무한탄창 시 탄약 `∞` 표시 — [FEAT-0018](./features/FEAT-0018-item-random-ability.md)
+- **연막 은폐 (시선 차단)** — 소화기 연막이 실제로 시야를 가리게. 내 시선(카메라→적)이 연막을 지나면 윤곽선·이름표·쉴드를 숨김(적이 연막 안 / 사이에 낌 / 내가 연막 안 모두 커버). 연막은 큰 구체 뭉치라 바운딩박스가 아닌 구체+선분 교차로 판정. 때리거나 맞은 상대는 2.5초간 서로 노출(`CombatRevealEvent`) — [FEAT-0019](./features/FEAT-0019-smoke-concealment.md) · [LESSON-0009](./lessons/LESSON-0009-hitbox-vs-visual.md)
+- **쉴드 표시 개편** — 머리 위 쉴드바를 평소엔 숨기고 피격 직후에만 노출(원거리에선 외곽선만). `ShieldSystem`이 `ShieldHitAt` 기록 → `OverheadShield` 연동 — [FEAT-0019](./features/FEAT-0019-smoke-concealment.md)
+- **UI 영어화** — 플레이어에게 보이는 문자열 전부 영어로 전환(로드아웃 카드·무기 설명, 데스캠, 능력 배너, 거점 승리/무승부, 힐 안내, StudentID 헤더). 앞으로 UI는 영어로만 — 새 `ScreenGui`는 `HUDController.KEEP_GUI`에 등록 필수 — [LESSON-0008](./lessons/LESSON-0008-ui-keepgui-whitelist.md)
+- **유리컵/유리벽 외곽선 튜닝** — 유리벽 흰 윤곽선 진하기 50% 감소(Highlight는 두께 조절 불가라 불투명도로). 유리컵 빨간 SelectionBox는 원복.
+- **데스캠 · 리스폰 개편** — 사망 시 Death cam 파트 고정 시점, 리스폰 최소 2초 / SPACE 조기 / 자동 10초, 죽은 동안만 TAB 로드아웃(블러 + 무기 상세 카드). 자동 로드 끄고 서버가 리스폰 관리 — [FEAT-0016](./features/FEAT-0016-deathcam-respawn.md)
+- **파괴 가능한 유리벽** — `glass wall` HP50, 파편·흰 윤곽선·피격 흰색 번쩍·파괴음, 20초 후 페이드인 재생. 킬 점수 누수 방지(오프셋 방식) — [FEAT-0017](./features/FEAT-0017-glass-wall.md)
+- **수류탄 개편** — 던지기 동작을 옛날 3-애니 방식으로 복구(단일 stop-마커·배속 폐기). 개수 도입(스폰 2 · 최대 4), 사망 시 드롭 + 근접 획득으로 내 개수 +1(`GrenadeDropSystem`), 쿨다운 1초, ThrowBox에 선택 투척류 모델·개수 표시, 소진 시 장착 차단 — `Cup/CAN Handler`, `HealHandler`, `HUDController`
+- **컴퍼스 3인칭** — `r15 compass` 리그 + Idle/Equip/Reload/Crouch/Jump/CrouchWalk/Slide 하반신 포즈 루프. 장착 시 기본 Tool Handle 숨김(리그만 표시) — `Compass Handler`, `GunSystem.Animations.Compass.ThirdPerson`
+- **캐릭터 파란색 버그 수정** — 3인칭 리그가 전신 R15라 팔다리 세그먼트(UpperArm/LowerArm/UpperLeg/LowerLeg/Foot)가 무기로 오인돼 캐릭터에 웰드되던 문제. `WeaponRig3P` 제외목록에 R15 팔다리 추가 — [BUG-0017](./bugs/BUG-0017-rig-limbs-welded.md)
+- **힐 UI/버그** — 하단 HealBox에 실제 책 모델(뷰포트)+개수 표시(BookCount 연동). 책 드롭을 호버링 책 모델+파란 윤곽선으로. 힐 도중 사망 시 `healBusy`가 안 풀려 책이 안 먹히던 버그 수정(pcall + 리스폰 초기화) — [BUG-0018](./bugs/BUG-0018-heal-busy-stuck.md)
+- **점프대 메커니즘** — 밟으면 즉시 발사에서, 좌·우 알람에서 `ALARM OFFICAL` 2번 울린 뒤 발사로 변경. conveyor(즉시 발사) 비활성화, `JumpPadSystem` 신규 — `JumpPadSystem`, `EnvironmentSFX`
+- **실리콘건 장전 애니** 교체(`70689278167503`). **발소리** 달리기 템포 통일 후 기본으로 롤백.
+
 ### 2026-08-01
 
 - **루팅 개편 (책 드롭·근접 흡수)** — 사망 시 보유 책 개수만큼 소닉 링처럼 드롭. 획득은 자석/킬러 우선이 아니라 몬스터 캔과 동일한 근접 방식(반경 5스터드, 살아있고 책 여유 있는 플레이어). 최대 보유 5, 0.6초 픽업 딜레이 — [FEAT-0015](./features/FEAT-0015-looting-rework.md)

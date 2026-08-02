@@ -37,5 +37,18 @@ tags: [feature, weapon, animation]
 - 마커는 애니 편집기에서 사운드 이름과 동일하게 찍어야 매칭된다.
 - 다른 무기에도 같은 패턴을 적용할 수 있다(사운드 폴더 + 트랙 브릿지).
 
+## 규칙: 마커 이름 = 사운드 이름 (전 무기 공통)
+
+3인칭/뷰모델 애니에 찍은 KeyframeMarker의 **이름을 `Workspace.SFX.<무기폴더>` 안 사운드 이름과 똑같이** 두면, 그 시점에 해당 사운드가 재생된다. 마커가 없으면 조용히 넘어간다(안전).
+
+- 마커 확인: `KeyframeSequenceProvider:GetKeyframeSequenceAsync(rbxassetid://ID)`로 런타임에서 읽는다(Edit 모드에서 트랙 마커 미노출 시 이 방법). 예) 실리콘 장전 `93584166771428` → `silicon_ready`(0.10s), `silicon_reload_1`(0.33s), `silicon_reload_2`(1.10s).
+- 바인딩: 핸들러에서 해당 트랙에 `GetMarkerReachedSignal(사운드명)`을 무기 SFX 폴더의 사운드마다 연결(`SfxBound` 어트리뷰트로 1회).
+
+### 현재 방식 / 자동화(미구현, 규칙만)
+
+- **현재**: 무기별 핸들러에 마커 바인딩 블록을 수동으로 넣는다(Compass·Silicon 등). 트리거(애니 재생)는 있어도 마커→사운드 연결은 자동이 아니다 — 넣어야 소리가 난다.
+- **자동화(향후 옵션, 미구현)**: `ThirdPersonAnims.load`에서 각 애니의 마커를 `GetKeyframeSequenceAsync`로 읽어, 마커 이름과 같은 SFX 사운드를 자동 바인딩하면 무기별 코드가 필요 없어진다. 규칙은 "마커명 = 사운드명" 하나로 유지. 지금은 문서로만 남기고 수동 배선을 유지한다.
+
 ## 변경 로그
 - 2026-07-03: 마커→사운드 브릿지(Equip/Reload), 2D(SoundService)·서버 3D, `end` 마커 소리 종료. Compass Reload 애니 등록.
+- 2026-08-02: 실리콘 장전 3인칭 애니(`93584166771428`) 등록 + 마커 3종(silicon_ready/reload_1/reload_2) 바인딩. "마커명=사운드명" 규칙·자동화 방안 문서화(자동화는 미구현).
