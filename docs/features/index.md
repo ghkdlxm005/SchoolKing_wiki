@@ -33,6 +33,10 @@ import DocCardList from '@theme/DocCardList';
 | [FEAT-0019](./FEAT-0019-smoke-concealment.md) | 연막 은폐(시선 차단) | 완료 | map/ui | 2026-08 |
 | [FEAT-0020](./FEAT-0020-grenade-accuracy-glass.md) | 수류탄 착탄 정확도 + 유리벽 관통 | 구현·재검증 | weapon | 2026-08 |
 | [FEAT-0021](./FEAT-0021-parkour-glass-break.md) | 파쿠르 — 유리벽 SPACE 파괴 | 기능 구현 | movement | 2026-08 |
+| [FEAT-0022](./FEAT-0022-main-menu-lobby.md) | 메인 메뉴 / 로비 | 구현 | ui/system | 2026-08 |
+| [FEAT-0023](./FEAT-0023-matchmaking.md) | 크로스 서버 매칭 시스템 | 구현 · 재검증 | system | 2026-08 |
+| [FEAT-0024](./FEAT-0024-melee-lunge.md) | 근접공격 돌진(에이펙스식 lunge) | 구현(모션 추후) | weapon/movement | 2026-08 |
+| [FEAT-0025](./FEAT-0025-grapple-zipline.md) | 그래플 집라인 (Rope_act) | 구현 · 재검증 | movement | 2026-08 |
 
 > 상태: `기획` → `구현 중` → `완료` → `보류`
 

@@ -30,6 +30,15 @@ import DocCardList from '@theme/DocCardList';
 | [BUG-0016](./BUG-0016-crouch-forward-studio-ctrlw.md) | 앉은 채 W가 Studio에서만 안 먹힘 | low | 환경 원인 | movement/input |
 | [BUG-0017](./BUG-0017-rig-limbs-welded.md) | 3인칭 리그 팔다리가 캐릭터에 웰드(파란 몸) | mid | 리그 판별 누락 | rig |
 | [BUG-0018](./BUG-0018-heal-busy-stuck.md) | 힐 도중 사망 시 healBusy 박제 → 책 안 먹힘 | mid | 상태 미해제 | heal |
+| [BUG-0019](./BUG-0019-teamtest-menu-bypass.md) | 팀 테스트 · 후속 접속자 메뉴 우회 | high | fixed | system/ui |
+| [BUG-0020](./BUG-0020-matchmaking-fragmentation.md) | 매칭 파편화 (각자 다른 방 배정) | high | fixed | system |
+| [BUG-0021](./BUG-0021-spawn-equip-viewmodel-missing.md) | 스폰 직후 장착 시 1인칭 뷰모델 미생성 | high | fixed | weapon/ui |
+| [BUG-0022](./BUG-0022-can-explosion-wall-penetration.md) | 캔 폭발이 벽을 통과해 데미지 | medium | fixed | weapon |
+| [BUG-0023](./BUG-0023-silicon-laser-afterimage.md) | 실리콘건 레이저 잔상 잔존 | high | fixed | weapon |
+| [BUG-0024](./BUG-0024-customize-loadout-prespawn.md) | 메인화면 Customize 무기 선택창 안 뜸 | medium | fixed | ui |
+| [BUG-0025](./BUG-0025-staggered-play-spawn.md) | 시차 PLAY 참가자 스폰 누락 | high | fixed | system |
+| [BUG-0026](./BUG-0026-you-died-stuck-on-play.md) | PLAY 시 YOU DIED 화면 박제 | high | fixed | ui/respawn |
+| [BUG-0027](./BUG-0027-legcrutch-tracer-lingering.md) | 목발 총알 궤적(트레이서) 잔존 | medium | fixed | weapon/render |
 
 > 상태: `열림(open)` → `수정 중` → `해결(fixed)` → `재발 감시`
 > 심각도: `critical` / `high` / `medium` / `low`

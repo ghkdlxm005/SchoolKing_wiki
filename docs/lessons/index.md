@@ -21,6 +21,7 @@ import DocCardList from '@theme/DocCardList';
 | [LESSON-0007](./LESSON-0007-viewmodel-wall-clip.md) | 1인칭 뷰모델 벽 관통: ViewportFrame은 함정(조명·파티클 상실), retract 채택 | [FEAT-0014](../features/FEAT-0014-viewmodel-wall-clip.md) |
 | [LESSON-0008](./LESSON-0008-ui-keepgui-whitelist.md) | 새 UI는 반드시 KEEP_GUI 화이트리스트에 등록한다 | AbilityHUD 미등록으로 sweep에 꺼짐 |
 | [LESSON-0009](./LESSON-0009-hitbox-vs-visual.md) | 판정 부피는 시각(메시 스케일)과 다르다 · 은폐는 시선 차단으로 | [FEAT-0019](../features/FEAT-0019-smoke-concealment.md) |
+| [LESSON-0010](./LESSON-0010-late-join-state.md) | 늦은 접속자 상태는 어트리뷰트 + 재확인으로 | [BUG-0019](../bugs/BUG-0019-teamtest-menu-bypass.md) |
 
 ## 하위 문서
 

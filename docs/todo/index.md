@@ -13,6 +13,10 @@ import DocCardList from '@theme/DocCardList';
 
 ## 지금 우선순위 (Next Up)
 
+- [ ] **매칭 시스템 라이브 재검증** — 게시본에서 2인 동시 PLAY 시 같은 방 배정(파편화 해소) 확인 ([FEAT-0023](../features/FEAT-0023-matchmaking.md), [BUG-0020](../bugs/BUG-0020-matchmaking-fragmentation.md))
+- [ ] **팀 테스트 2인 메뉴 재검증** — 후속 접속자도 메뉴 뜨는지 실기 확인 ([BUG-0019](../bugs/BUG-0019-teamtest-menu-bypass.md))
+- [ ] 예약 서버 부족 인원 **AI 봇 채우기** — `MatchFillBots`/`SpawnFillBots` 신호를 기존 봇 스포너에 연동 ([FEAT-0023](../features/FEAT-0023-matchmaking.md))
+
 - [ ] **캔/컵 유리벽 부수기 디버깅** — 관통·파괴 타이밍/딜레이/여러 장 관통 정밀 검증 ([FEAT-0020](../features/FEAT-0020-grenade-accuracy-glass.md))
 - [ ] 파쿠르 SPACE=점프 충돌 → ContextActionService로 분리 + 3인칭 파쿠르 연출 ([FEAT-0021](../features/FEAT-0021-parkour-glass-break.md))
 - [ ] `error`(맵 이탈 경고음) — 경계(투명벽) 감지 시스템 필요 · `kill_crowd_1` 에셋 업로드
