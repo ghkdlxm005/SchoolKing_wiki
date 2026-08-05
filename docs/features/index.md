@@ -37,6 +37,7 @@ import DocCardList from '@theme/DocCardList';
 | [FEAT-0023](./FEAT-0023-matchmaking.md) | 크로스 서버 매칭 시스템 | 구현 · 재검증 | system | 2026-08 |
 | [FEAT-0024](./FEAT-0024-melee-lunge.md) | 근접공격 돌진(에이펙스식 lunge) | 구현(모션 추후) | weapon/movement | 2026-08 |
 | [FEAT-0025](./FEAT-0025-grapple-zipline.md) | 그래플 집라인 (Rope_act) | 구현 · 재검증 | movement | 2026-08 |
+| [FEAT-0026](./FEAT-0026-loadout-select-gate.md) | 라운드 시작 로드아웃 선택 게이트 | 구현 · 재검증 | system/ui | 2026-08 |
 
 > 상태: `기획` → `구현 중` → `완료` → `보류`
 

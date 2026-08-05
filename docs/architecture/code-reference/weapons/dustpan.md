@@ -17,13 +17,14 @@ tags: [weapon, reference, melee]
 | 스윙 아크 | 100° |
 | 쿨다운 | 0.4s |
 | 스윙 시간 / 딜레이 | 0.35s / 0.12s |
-| 특수 | 자동 타겟팅 · 돌진(lunge) · 넉백 · 피격자 화면 흔들림 |
+| 특수 | 자동 타겟팅 · 돌진(lunge, 콘 120°) · 넉백(HitKnockback 100) · 화면 흔들림 · **유리벽 원샷 파괴** |
 | 우클릭 | **없음** (쉴드 기능 삭제됨) |
 
 > 소스: `MeleeSystem.MeleeConfig.Dustpan`. 돌진은 `SharedFX.MeleeLunge`, 넉백/데미지는 `MeleeEvent`.
 
 ## 수정 이력
 
+- **2026-08-06** — 유리벽 스윙 한 번에 파괴(범위 내 glass wall Humanoid Health→0). 돌진(MeleeLunge) 콘 55°→120°로 락온·공격범위 일치. 넉백 사거리↑(HitKnockback 55→100, MeleeConfig.Dustpan).
 - **2026-08-04 (돌진/넉백)** — 화면 정면 사거리(11) 내 적에게 좌클릭 시 그쪽으로 돌진 + 데미지 + 넉백 동시([FEAT-0024](../../../features/FEAT-0024-melee-lunge.md)). 데미지 18→50, 사거리 5→11.
 - **2026-08-04 (쉴드 삭제)** — 의미 없던 우클릭 방어(쉴드) 제거. 우클릭 무동작.
 - **2026-08-04 (손/숫자)** — 데미지 숫자 표시(HitFeedbackEvent). 1인칭 손: 정지=호흡·이동=걷기 스웨이 추가, 슬라이딩 시 손 올라가던 틸트 제거.

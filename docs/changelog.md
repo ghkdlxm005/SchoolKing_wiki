@@ -22,6 +22,29 @@ tags: [overview]
 
 ## 2026-08
 
+### 2026-08-06
+
+- **매칭 수락 팝업** — 매치 성사 시 텔레포트 직전 "MATCH FOUND / ACCEPT"(10초) 팝업. 수락해야 텔레포트, 미수락 시 로비 잔류. `MatchAcceptEvent` 신설, `MatchmakingService` 폴러에 수락 게이트, `MainMenuController`에 팝업. **게시 서버에서만 실동작(실기 검증 필요)** — [FEAT-0023](./features/FEAT-0023-matchmaking.md)
+- **라운드 시작 로드아웃 선택 게이트** — 라운드 시작 시 공격무기 1 + 투척무기 1 선택창(15초·Ready·초과 시 목발+컵 기본). 확정 시 공격+투척+Dustpan 3개만 지급(나머지 제거), 리스폰 시 재적용. 키 1=공격/2=투척/3=Dustpan. **UI는 별도 패널 대신 기존 로드아웃 메뉴 재사용**(레이아웃 통일) + `MenuOpen`으로 마우스 해제(선택창에서 마우스 잠기던 것 수정) — [FEAT-0026](./features/FEAT-0026-loadout-select-gate.md)
+- **토스터 차징 3인칭 실제 메시** — 파티클 대신 뷰모델 토스트 단계(ToastStage2 구운빵/ToastStage3 탄빵+불) 메시를 리그 빵에 복제·단계별 표시. — [Toaster](./architecture/code-reference/weapons/toaster.md)
+- **컴퍼스 발사속도 재조정** — 0.03이 너무 빨라 0.075로 하향.
+- **상대 플레이어 달리기 소리 통일** — 상대의 `IsRunState`/`IsCrouching` 어트리뷰트가 클라 간 복제 안 돼 상대는 항상 걷기 소리(gym_walking)로 들리던 문제. 봇과 동일하게 **속도 기반**(수평속도 20 초과→달리기, 걷기16/달리기24 기준) 판정으로 전환 → 상대 달리기 소리가 본인·봇과 동일 템포. (MovementSounds)
+- **무기 밸런스** — 컴퍼스 발사속도 +50%(0.045→0.03)·탄퍼짐 1.5배(0.009→0.0135). 실리콘건 최대 레이저뎀 12→13(유리벽 2배 유지).
+- **Dustpan 강화** — 스윙으로 유리벽 한 번에 파괴. 돌진(MeleeLunge) 콘 55°→120°로 락온·공격범위 일치. 넉백 사거리↑(HitKnockback 55→100).
+- **모든 총알 궤적 Trail** — 상대 시점 총알에 Dustpan식 Trail(궤적) 추가, 잠깐 남았다 소멸(일반 0.8s/토스터 0.6s). (WeaponEffectsClient)
+- **에너지드링크 스폰 개편** — 상시 노출 삭제 → 스폰 위치 중 **최대 4개 동시 랜덤 스폰**(소진 시 랜덤 위치 재충원). 도핑(능력) 중엔 에너지드링크 미획득. (MonsterEnergySystem)
+- **토스터** — 상대 시점 총알(ToasterBullet)·빵·3인칭 리그/애니(대기·들기·사격·점프·재장전·앉기·앉기걷기·슬라이딩) 노출. 봇=플레이어 동일 취급. — [Toaster 문서](./architecture/code-reference/weapons/toaster.md)
+
+### 2026-08-05
+
+- **BUG-0028 근접 넉백 무효(MeleeHitEvent 미존재)** — `MeleeSystem.Remotes`에 `MeleeHitEvent`가 없어 MeleeKnockbackClient가 무한 대기, 서버 폴백 속도는 플레이어에게 안 먹혀 넉백이 안 됐다 → RemoteEvent 생성 — [BUG-0028](./bugs/BUG-0028-meleehitevent-missing.md)
+- **BUG-0029 SlideScript cleanupAll nil 호출** — 뒤에 정의된 `targetSpeedFor`가 포워드 선언에서 빠지고 `local function`이라 cleanupAll에선 nil → 포워드 선언 추가 + local 제거 — [BUG-0029](./bugs/BUG-0029-slidescript-forward-decl-nil.md)
+- **토스터 3인칭 리그·애니** — 3인칭 무기 리그 `r15 toaster` 부착(ServerHandler에 WeaponRig3P) + 3인칭 애니 연결(Idle 106656977590375·Equip 127975230884400·Fire 70983246796143). Play 검증: 리그 부착 + Idle 재생 — [Toaster 문서](./architecture/code-reference/weapons/toaster.md)
+- **토스터 빵 상대 노출** — 발사 시 나오는 빵이 본인 뷰모델 애니뿐이라 상대에겐 안 보이던 것을, 상대 클라 `WeaponEffectsClient`가 총구에 실제 빵 메시(`ToasterVM.bread_1`)를 복제·팝시켜 보이게. `VisualEffectEvent("GunFire")`에 weapon 정보 실음.
+- **슬라이드 사운드 서버 재생** — `Sliding.mp3`를 슬라이드 시작 순간 서버가 캐릭터에서 3D 재생(본인+상대). 어긋나던 클라 2D·MovementSounds 경로 제거(`SlideSoundEvent`·`SlideSoundServer`).
+- **유리벽·문 시선+근접 상호작용** — 카메라 시선 레이 12스터드 이내로 파트를 보면 프롬프트 on(무한 사거리 아님) — `GazeInteract`.
+- **Code Reference 스냅샷 · 무기별 문서 신설** — 현재 코드에서 긁은 스크립트91·Remote36·어트리뷰트66·설정값·맵/사운드 스냅샷과, 무기 1종=문서1개(현재 스펙 상단 + 수정 이력) 체계 추가 — [Code Reference](./architecture/code-reference/index.md)
+
 ### 2026-08-04
 
 - **그래플 집라인 (Rope_act)** — 기울어진 트러스 빔 `Rope_act`를 끝에서 끝으로 타는 이동기. 빔 전체에 `[E]` 프롬프트, 텔레포트 없이 `LinearVelocity`로 부드럽게 탑승, 스페이스로 하차, 타는 중 총·수류탄 사용 가능(힐 불가). 임의 Y/천장 배제하고 Rope_act 기울기 동선만 추종. 로프 비주얼 제거·프롬프트 범위 축소·무한수류탄 중 탑승 허용 — [FEAT-0025](./features/FEAT-0025-grapple-zipline.md)

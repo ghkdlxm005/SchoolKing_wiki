@@ -39,6 +39,8 @@ import DocCardList from '@theme/DocCardList';
 | [BUG-0025](./BUG-0025-staggered-play-spawn.md) | 시차 PLAY 참가자 스폰 누락 | high | fixed | system |
 | [BUG-0026](./BUG-0026-you-died-stuck-on-play.md) | PLAY 시 YOU DIED 화면 박제 | high | fixed | ui/respawn |
 | [BUG-0027](./BUG-0027-legcrutch-tracer-lingering.md) | 목발 총알 궤적(트레이서) 잔존 | medium | fixed | weapon/render |
+| [BUG-0028](./BUG-0028-meleehitevent-missing.md) | MeleeHitEvent 미존재로 근접 넉백 무효 | high | fixed | weapon/combat |
+| [BUG-0029](./BUG-0029-slidescript-forward-decl-nil.md) | SlideScript cleanupAll targetSpeedFor nil | medium | fixed | movement |
 
 > 상태: `열림(open)` → `수정 중` → `해결(fixed)` → `재발 감시`
 > 심각도: `critical` / `high` / `medium` / `low`
