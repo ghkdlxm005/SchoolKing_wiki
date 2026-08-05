@@ -9,6 +9,8 @@ import DocCardList from '@theme/DocCardList';
 # 시스템 아키텍처 개요
 
 >  실제 Roblox 코드 구조 분석은 **[코드 구조](./code-structure.md)** 참고 (설정 기반 모듈·통신 맵·체력/쉴드).
+>
+>  **현재 코드에서 직접 긁어온 스냅샷**(스크립트 91·Remote 36·어트리뷰트 66·설정값·맵/사운드)은 **[Code Reference](./code-reference/index.md)** 참고. 요약이 흐릿할 때 실제 구조 대조용.
 
 ## 시스템 맵
 

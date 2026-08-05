@@ -1,0 +1,9 @@
+{
+  "label": "무기별 문서 (Weapons)",
+  "position": 1.5,
+  "link": {
+    "type": "generated-index",
+    "description": "무기 1종 = 문서 1개. 최상단은 현재 스펙(공격력·공격속도 등), 그 아래는 수정 이력이 쌓인다."
+  },
+  "collapsed": true
+}

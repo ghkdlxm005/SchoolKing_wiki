@@ -1,0 +1,9 @@
+{
+  "label": "Code Reference (스냅샷)",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "현재 코드에서 직접 긁어온 스냅샷 — 스크립트 인벤토리, RemoteEvent, 어트리뷰트, 설정값, 맵/사운드. 요약이 흐릿할 때 여기서 실제 구조를 확인한다."
+  },
+  "collapsed": true
+}
