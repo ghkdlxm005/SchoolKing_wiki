@@ -22,7 +22,7 @@ tags: [feature, system, ui, weapon]
 - **초과 시 기본값**: 선택/Ready 없이 15초 경과하면 **LegCrutch + Cup** 기본 지급.
 - **지급 방식**: 확정 시 백팩·캐릭터의 기존 Tool을 모두 제거하고 **공격+투척+Dustpan 3개만** `StarterPack`에서 복제 지급.
 - **리스폰 유지**: 선택은 `LoadoutAttack`/`LoadoutThrow` 어트리뷰트에 저장 → 리스폰 때 자동 재적용(StarterPack 기본 지급 덮어씀).
-- **키 매핑**: 1 = 공격, 2 = 투척, 3 = Dustpan (HUDController).
+- **키 매핑**: 1 = 메인총기, **G = 투척(원래대로)**, 3 = 근접 전용(Dustpan), 2 = 비움(추후 확장). Dustpan은 더 이상 메인무기가 아님.
 
 ## 구현 위치
 
