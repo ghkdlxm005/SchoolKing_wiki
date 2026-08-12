@@ -54,6 +54,17 @@ Studio에서는 텔레포트/MemoryStore가 동작하지 않으므로, PLAY 시 
 - 게임 **게시(Publish)** 필수 — `ReserveServer`/`TeleportService`/`MemoryStore`는 Play Solo/Studio에서 미동작.
 - Studio 테스트 시 MemoryStore 접근은 **API Services 접근 허용** 필요.
 
+## 알려진 이슈 / 안정화 (2026-08-10)
+
+게시 서버 2인 테스트에서 발견·대응(크로스서버는 게시 전용 → Studio 검증 불가, 2인 실기 재검증 권장):
+
+- **재PLAY 먹통**: 매치 종료·로비 복귀 후 PLAY가 안 먹힘. 로컬 폴백의 `busy` 플래그가 미리셋된 것이 원인(Studio 재현·수정 — 로비 복귀 시 해제). 게시 경로는 잔여 배정 코드 제거로 방어.
+- **수락 화면 박제**: accept를 시차로 누르면 갇힘. 서버=텔레포트 실패 시 취소 알림, 클라=수락 후 18초 무응답 시 자동 해제.
+- **죽은 서버 재텔레포트 방지**: PLAY 시 이전 매치의 assign 코드·수락상태 정리.
+- **UI 하드 리셋**: 로비 복귀 시 searching·매칭UI·로딩·수락·DeathScreen 강제 리셋.
+- **늦은 조인 스폰 보장**: 예약 서버에 시차로 늦게 도착한 참가자가 캐릭터 없으면 직접 LoadCharacter(죽은 화면 갇힘 방지).
+
 ## 변경 로그
 
+- 2026-08-10: 안정화 6건 — 재PLAY 먹통·수락 박제·잔여배정 정리·UI 리셋·늦은조인 스폰·점수판 정렬(→[FEAT-0027](./FEAT-0027-ai-bot-system.md) 무관, CapturePointSystem).
 - 2026-08-03: 크로스 서버 매칭 최초 구현(큐·리더 선출·예약·배정·복귀), Studio 로컬 폴백, 메뉴 FINDING/CANCEL UI 연동.
