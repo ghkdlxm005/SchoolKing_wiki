@@ -14,7 +14,8 @@ import DocCardList from '@theme/DocCardList';
 
 | 날짜 | 개발 항목 | 관련 |
 | --- | --- | --- |
-| [2026-08-13](./2026-08-13.md) | AI 봇 48차(전투 중 고지 선점 — 사다리·양쪽 건물 실사용), 고지 후보 반경 82 확대 | [changelog](../changelog.md), [FEAT-0027](../features/FEAT-0027-ai-bot-system.md) |
+| [2026-08-15](./2026-08-15.md) | Dustpan 뷰모델 축 고정 버그 수정(ArmWeldMap·Weld rigged 판정), 상태별 애니(들기/재생/공격/슬라이딩), 근접무기 이동속도 보너스 | [FEAT-0029](../features/FEAT-0029-melee-viewmodel-movement.md), [changelog](../changelog.md) |
+| [2026-08-13](./2026-08-13.md) | AI 봇 48차(전투 중 고지 선점), 고지 반경 82, 49차(측면/건물 경유 접근 분산 — 중앙 쏠림 해소) + 학습 데이터 점검, 매칭 수락 시차 시 뒤 사람 갇힘(텔레포트 실패 복구) | [changelog](../changelog.md), [FEAT-0027](../features/FEAT-0027-ai-bot-system.md), [FEAT-0023](../features/FEAT-0023-matchmaking.md) |
 | [2026-08-10](./2026-08-10.md) | AI 봇 전투 다중화(무기 성향 브롤러/스나이퍼/스키미셔/듀얼리스트 + mood 변주 + 스폰 무기 분산 + 위층 캠퍼 추격), 학습 데이터 탑다운 뷰어 | [changelog](../changelog.md) |
 | [2026-08-08](./2026-08-08.md) | AI 봇 26~39차(수류탄 통합·멈블·능력·명중률·토스터·힐·엄폐 투척), 게임 종료 K/D/A 점수판, 거점 초당 3점·수직 확장, 연막 프레임 드랍, 텔레메트리+DataStore 학습 인프라+RouteLibrary v1, 게시본 마우스 잠김(치명) | [changelog](../changelog.md) |
 | [2026-08-06](./2026-08-06.md) | 상대 달리기 소리 통일, 무기 밸런스(컴퍼스·실리콘건), Dustpan 강화, 에너지드링크 개편, 토스터(총알·빵·3인칭·차징 실제메시), 모든 총알 궤적, 로드아웃 선택 게이트, 매칭 수락 팝업, 버그 2건, AI 봇(CleanUP) 개선 10~25차 | [FEAT-0026](../features/FEAT-0026-loadout-select-gate.md), [FEAT-0023](../features/FEAT-0023-matchmaking.md), [BUG-0028](../bugs/BUG-0028-meleehitevent-missing.md), [BUG-0029](../bugs/BUG-0029-slidescript-forward-decl-nil.md) |

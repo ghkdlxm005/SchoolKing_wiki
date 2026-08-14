@@ -40,6 +40,7 @@ import DocCardList from '@theme/DocCardList';
 | [FEAT-0026](./FEAT-0026-loadout-select-gate.md) | 라운드 시작 로드아웃 선택 게이트 | 구현 · 재검증 | system/ui | 2026-08 |
 | [FEAT-0027](./FEAT-0027-ai-bot-system.md) | AI 봇 시스템 종합 (CleanUP, 무기 성향·mood) | 구현 · 라이브 | system/ai | 2026-08 |
 | [FEAT-0028](./FEAT-0028-ai-telemetry-learning.md) | AI 동선 텔레메트리 + 학습 (RouteLibrary) | 구현 · 수집 중 | system/ai/data | 2026-08 |
+| [FEAT-0029](./FEAT-0029-melee-viewmodel-movement.md) | 근접무기 뷰모델·애니·이동 시스템 (Dustpan 축 리그·이속 보너스) | 구현 · 라이브 검증 대기 | weapon/viewmodel/movement | 2026-08 |
 
 > 상태: `기획` → `구현 중` → `완료` → `보류`
 

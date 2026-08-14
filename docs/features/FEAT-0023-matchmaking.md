@@ -60,11 +60,13 @@ Studio에서는 텔레포트/MemoryStore가 동작하지 않으므로, PLAY 시 
 
 - **재PLAY 먹통**: 매치 종료·로비 복귀 후 PLAY가 안 먹힘. 로컬 폴백의 `busy` 플래그가 미리셋된 것이 원인(Studio 재현·수정 — 로비 복귀 시 해제). 게시 경로는 잔여 배정 코드 제거로 방어.
 - **수락 화면 박제**: accept를 시차로 누르면 갇힘. 서버=텔레포트 실패 시 취소 알림, 클라=수락 후 18초 무응답 시 자동 해제.
+- **수락 시차 → 뒤 사람 로딩 갇힘(2026-08-13 추가 수정)**: 위 18초 워치독은 `acceptGui`가 켜져 있을 때만 동작 → "found"로 넘어가 로딩 로고가 뜬 뒤 텔레포트가 **비동기 실패**하면(시차·두 번째 텔레포트에서 잦음) 로딩이 안 꺼지고 갇힘. 근본 원인은 클라의 **`TeleportInitFailed` 핸들러 부재**. → 클라에 텔레포트 실패 핸들러 + 로딩 22초 타임아웃 워치독(로비 복귀·재PLAY) 추가, 서버는 `TeleportToPrivateServer`→`TeleportAsync`(ReservedServerAccessCode) 교체 + `TeleportInitFailed` 3회 재시도·최종 실패 시 취소 통지.
 - **죽은 서버 재텔레포트 방지**: PLAY 시 이전 매치의 assign 코드·수락상태 정리.
 - **UI 하드 리셋**: 로비 복귀 시 searching·매칭UI·로딩·수락·DeathScreen 강제 리셋.
 - **늦은 조인 스폰 보장**: 예약 서버에 시차로 늦게 도착한 참가자가 캐릭터 없으면 직접 LoadCharacter(죽은 화면 갇힘 방지).
 
 ## 변경 로그
 
+- 2026-08-13: 수락 시차 → 뒤 사람 로딩 갇힘 추가 수정(클라 `TeleportInitFailed` 핸들러 + 로딩 타임아웃, 서버 `TeleportAsync` 재시도 3회). 2인 실기 재검증 필요.
 - 2026-08-10: 안정화 6건 — 재PLAY 먹통·수락 박제·잔여배정 정리·UI 리셋·늦은조인 스폰·점수판 정렬(→[FEAT-0027](./FEAT-0027-ai-bot-system.md) 무관, CapturePointSystem).
 - 2026-08-03: 크로스 서버 매칭 최초 구현(큐·리더 선출·예약·배정·복귀), Studio 로컬 폴백, 메뉴 FINDING/CANCEL UI 연동.

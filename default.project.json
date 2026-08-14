@@ -1,0 +1,30 @@
+{
+  "name": "SchoolKing",
+  "_comment": "게임 코드 미러(game-source/)용 Rojo 매핑. ROJO_SETUP.md 참조. 주의: 'rojo serve'는 파일->Studio 방향이라 game-source/를 먼저 채운 뒤에만 사용(비어 있으면 Studio를 덮어씀). 초기 추출은 rbxlx-to-rojo 사용.",
+  "tree": {
+    "$className": "DataModel",
+    "ServerScriptService": {
+      "$path": "game-source/ServerScriptService"
+    },
+    "ServerStorage": {
+      "$path": "game-source/ServerStorage"
+    },
+    "ReplicatedStorage": {
+      "$path": "game-source/ReplicatedStorage"
+    },
+    "StarterGui": {
+      "$path": "game-source/StarterGui"
+    },
+    "StarterPack": {
+      "$path": "game-source/StarterPack"
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "$path": "game-source/StarterPlayer/StarterPlayerScripts"
+      },
+      "StarterCharacterScripts": {
+        "$path": "game-source/StarterPlayer/StarterCharacterScripts"
+      }
+    }
+  }
+}
