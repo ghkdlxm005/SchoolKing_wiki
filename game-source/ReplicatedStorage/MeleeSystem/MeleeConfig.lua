@@ -83,9 +83,10 @@ MeleeConfig.Dustpan = setmetatable({
 	-- 달리기 애니: 진입 시 재생 1회 → 1프레임 유지(무기 내림)
 	RunAnim = "rbxassetid://71609837264681",
 	RunHoldAnim = "rbxassetid://92638375107608",
-	-- 공격(스윙) 애니
-	SwingAnim_1 = "rbxassetid://134776635996855",
-	SwingAnim_2 = "rbxassetid://134776635996855",
+	-- 공격(스윙) 애니 — 3종 랜덤(trySwing에서 math.random(3))
+	SwingAnim_1 = "rbxassetid://134776635996855",   -- 오른손
+	SwingAnim_2 = "rbxassetid://117283418852695",   -- 양손
+	SwingAnim_3 = "rbxassetid://121812017051385",   -- 왼손
 	SlideAnim = "rbxassetid://81035765089543",   -- 슬라이딩(슬라이드 중 유지)
 
 	-- 휠두르기 — 솔로 치는 건 가벼움 (데미지 낮음, 빠르고 연속적)
