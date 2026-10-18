@@ -1,6 +1,6 @@
 // @ts-check
-// SchoolKing team wiki configuration
-// See: https://docusaurus.io/docs/api/docusaurus-config
+// School KING 공개 위키 설정
+// 공개 사이트: 게임 위키 + 패치 노트만. 내부 문서는 비공개 개발 저장소에 둔다.
 
 import {themes as prismThemes} from 'prism-react-renderer';
 import {createRequire} from 'module';
@@ -9,19 +9,16 @@ const require = createRequire(import.meta.url);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'SchoolKing 위키',
-  tagline: '로블록스 SchoolKing 팀 위키',
-  favicon: 'img/favicon.ico',
+  title: 'School KING',
+  tagline: '학교에서 벌어지는 무브먼트 슈터, School KING 공식 위키',
+  favicon: 'img/logo.svg',
 
   future: {
     v4: true,
   },
 
-  // Production URL (GitHub Pages)
   url: 'https://ghkdlxm005.github.io',
   baseUrl: '/SchoolKing_wiki/',
-
-  // GitHub Pages deployment settings
   organizationName: 'ghkdlxm005',
   projectName: 'SchoolKing_wiki',
   deploymentBranch: 'gh-pages',
@@ -31,9 +28,8 @@ const config = {
 
   markdown: {
     format: 'detect',
-    mermaid: true,
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownLinks: 'throw',
       onBrokenMarkdownImages: 'warn',
     },
   },
@@ -43,16 +39,16 @@ const config = {
     locales: ['ko'],
   },
 
-  // Offline local search (Korean supported). Builds a search index at build time.
   themes: [
-    '@docusaurus/theme-mermaid',
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
         language: ['ko', 'en'],
         indexBlog: true,
-        docsRouteBasePath: '/docs',
+        docsRouteBasePath: '/wiki',
+        blogRouteBasePath: '/patch-notes',
+        blogDir: './patch-notes',
         highlightSearchTermsOnTargetPage: true,
         explicitSearchResultPath: true,
       },
@@ -65,18 +61,24 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: 'wiki',
           sidebarPath: './sidebars.js',
-          // "Edit this page" link to GitHub
-          editUrl: 'https://github.com/ghkdlxm005/SchoolKing_wiki/tree/main/',
           showLastUpdateTime: process.env.CI === 'true',
         },
         blog: {
-          blogTitle: '공지·개발일지',
-          blogSidebarTitle: '최근 글',
+          routeBasePath: 'patch-notes',
+          path: 'patch-notes',
+          blogTitle: '패치 노트',
+          blogDescription: 'School KING 업데이트 내역',
+          blogSidebarTitle: '전체 패치',
+          blogSidebarCount: 'ALL',
+          postsPerPage: 10,
           showReadingTime: false,
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
+          authorsMapPath: 'authors.yml',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
           onUntruncatedBlogPosts: 'ignore',
+          feedOptions: {type: 'rss', title: 'School KING 패치 노트'},
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -88,55 +90,41 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/docusaurus-social-card.jpg',
       colorMode: {
-        respectPrefersColorScheme: true,
+        defaultMode: 'dark',
+        respectPrefersColorScheme: false,
       },
       docs: {
-        sidebar: { autoCollapseCategories: true },
+        sidebar: {autoCollapseCategories: false, hideable: true},
       },
       navbar: {
-        title: 'SchoolKing 위키',
-        logo: {
-          alt: 'SchoolKing 로고',
-          src: 'img/logo.svg',
-        },
+        title: 'School KING',
+        logo: {alt: 'School KING', src: 'img/logo.svg'},
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'wikiSidebar',
-            position: 'left',
-            label: '위키',
-          },
-          {
-            to: 'pathname:///SchoolKing_wiki/admin/',
-            label: '✏️ 편집',
-            position: 'right',
-          },
-          {to: '/blog', label: '공지·개발일지', position: 'left'},
-          {
-            href: 'https://github.com/ghkdlxm005/SchoolKing_wiki',
-            label: 'GitHub',
-            position: 'right',
-          },
+          {to: '/patch-notes', label: '패치 노트', position: 'left'},
+          {type: 'docSidebar', sidebarId: 'wikiSidebar', position: 'left', label: '위키'},
+          {to: '/wiki/modes', label: '모드', position: 'left'},
+          {to: '/wiki/weapons', label: '무기', position: 'left'},
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: '바로가기',
+            title: '위키',
             items: [
-              {label: '위키 홈', to: '/docs/intro'},
-              {label: '공지·개발일지', to: '/blog'},
-              {
-                label: 'GitHub 저장소',
-                href: 'https://github.com/ghkdlxm005/SchoolKing_wiki',
-              },
+              {label: '게임 소개', to: '/wiki/intro'},
+              {label: '모드', to: '/wiki/modes'},
+              {label: '무기', to: '/wiki/weapons'},
+              {label: '조작키', to: '/wiki/controls'},
             ],
           },
+          {
+            title: '소식',
+            items: [{label: '패치 노트', to: '/patch-notes'}],
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} SchoolKing Team. Built with Docusaurus.`,
+        copyright: `© ${new Date().getFullYear()} School KING. Roblox 게임 팬·플레이어를 위한 위키입니다.`,
       },
       prism: {
         theme: prismThemes.github,

@@ -1,95 +1,117 @@
-/**
- * SchoolKing wiki — clean black & white (monochrome) theme.
- * Infima variables overridden for a minimal mono look.
- */
+/* School KING 위키 테마 — 어두운 바탕 + 왕관 금색 포인트 */
 
-/* ===== Light mode (near-black accents on white) ===== */
 :root {
-  --ifm-color-primary: #111111;
-  --ifm-color-primary-dark: #000000;
-  --ifm-color-primary-darker: #000000;
-  --ifm-color-primary-darkest: #000000;
-  --ifm-color-primary-light: #333333;
-  --ifm-color-primary-lighter: #4d4d4d;
-  --ifm-color-primary-lightest: #666666;
-
+  --ifm-color-primary: #b88600;
+  --ifm-color-primary-dark: #a67900;
+  --ifm-color-primary-darker: #9c7200;
+  --ifm-color-primary-darkest: #805e00;
+  --ifm-color-primary-light: #ca9300;
+  --ifm-color-primary-lighter: #d49a00;
+  --ifm-color-primary-lightest: #f0af00;
+  --ifm-font-family-base: 'Pretendard', system-ui, -apple-system, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   --ifm-background-color: #ffffff;
-  --ifm-background-surface-color: #ffffff;
-  --ifm-navbar-background-color: #ffffff;
-  --ifm-footer-background-color: #111111;
-
+  --ifm-background-surface-color: #f6f7f9;
+  --ifm-toc-border-color: #e3e5ea;
   --ifm-code-font-size: 95%;
-  --ifm-font-color-base: #1a1a1a;
-  --ifm-heading-color: #000000;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
-
-  --ifm-toc-border-color: #e6e6e6;
-  --ifm-hr-background-color: #e6e6e6;
+  --sk-accent: #b88600;
+  --sk-accent-soft: rgba(184, 134, 0, 0.12);
+  --sk-muted: #5b6170;
+  --sk-hero-bg: #f6f7f9;
 }
 
-/* ===== Dark mode (near-white accents on near-black) ===== */
 [data-theme='dark'] {
-  --ifm-color-primary: #ededed;
-  --ifm-color-primary-dark: #d4d4d4;
-  --ifm-color-primary-darker: #c7c7c7;
-  --ifm-color-primary-darkest: #a3a3a3;
-  --ifm-color-primary-light: #f5f5f5;
-  --ifm-color-primary-lighter: #fafafa;
-  --ifm-color-primary-lightest: #ffffff;
-
-  --ifm-background-color: #0d0d0d;
-  --ifm-background-surface-color: #161616;
-  --ifm-navbar-background-color: #0d0d0d;
-  --ifm-footer-background-color: #000000;
-
-  --ifm-font-color-base: #e8e8e8;
+  --ifm-color-primary: #f5b800;
+  --ifm-color-primary-dark: #dda600;
+  --ifm-color-primary-darker: #d09c00;
+  --ifm-color-primary-darkest: #ab8100;
+  --ifm-color-primary-light: #ffc31a;
+  --ifm-color-primary-lighter: #ffc829;
+  --ifm-color-primary-lightest: #ffd457;
+  --ifm-background-color: #0f1115;
+  --ifm-background-surface-color: #171a21;
+  --ifm-navbar-background-color: #0f1115;
+  --ifm-footer-background-color: #0a0b0e;
+  --ifm-toc-border-color: #262a33;
+  --ifm-font-color-base: #e6e8ec;
   --ifm-heading-color: #ffffff;
-  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.12);
-
-  --ifm-toc-border-color: #2a2a2a;
-  --ifm-hr-background-color: #2a2a2a;
+  --sk-accent: #f5b800;
+  --sk-accent-soft: rgba(245, 184, 0, 0.14);
+  --sk-muted: #9aa1ad;
+  --sk-hero-bg: #0f1115;
 }
 
-/* Crisp 1px divider under the navbar */
 .navbar {
   border-bottom: 1px solid var(--ifm-toc-border-color);
   box-shadow: none;
 }
-
-/* Links: underline on hover for a clean editorial feel */
-.markdown a {
-  text-decoration: none;
-}
-.markdown a:hover {
-  text-decoration: underline;
+.navbar__title {
+  font-weight: 900;
+  letter-spacing: -0.01em;
 }
 
-/* Active sidebar item: subtle grey fill instead of color tint */
-.menu__link--active:not(.menu__link--sublist) {
+/* 표: 수치 비교가 많으므로 촘촘하게 */
+.markdown table {
+  font-size: 0.93rem;
+}
+@media (min-width: 997px) {
+  .markdown table {
+    display: table;
+    width: 100%;
+  }
+}
+.markdown table thead tr {
   background: var(--ifm-background-surface-color);
-  font-weight: 600;
 }
-[data-theme='light'] .menu__link--active:not(.menu__link--sublist) {
-  background: #f2f2f2;
-}
-
-/* Buttons (e.g. category index cards) stay monochrome */
-.button--primary {
-  --ifm-button-background-color: #111111;
-  --ifm-button-border-color: #111111;
-  color: #ffffff;
-}
-[data-theme='dark'] .button--primary {
-  --ifm-button-background-color: #ededed;
-  --ifm-button-border-color: #ededed;
-  color: #000000;
+.markdown th {
+  white-space: nowrap;
 }
 
-/* Inline code: neutral grey box */
-code {
-  background: rgba(0, 0, 0, 0.06);
+/* 키 표시 <kbd> */
+kbd {
+  padding: 0.1rem 0.45rem;
   border: 1px solid var(--ifm-toc-border-color);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--ifm-background-surface-color);
+  font-size: 0.85em;
+  font-family: inherit;
+  font-weight: 700;
 }
-[data-theme='dark'] code {
-  background: rgba(255, 255, 255, 0.08);
+
+/* 무기 요약 박스 */
+.sk-stat {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 0.6rem;
+  margin: 1rem 0 1.5rem;
+}
+.sk-stat > div {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 10px;
+  background: var(--ifm-background-surface-color);
+}
+.sk-stat b {
+  display: block;
+  font-size: 1.25rem;
+  color: var(--sk-accent);
+}
+.sk-stat span {
+  font-size: 0.8rem;
+  color: var(--sk-muted);
+}
+
+/* 패치 노트 목록 */
+.blog-wrapper article h2 a {
+  color: var(--ifm-heading-color);
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #0a0b0e;
+  border-top: 1px solid #262a33;
+}
+@media (max-width: 996px) {
+  .markdown td {
+    white-space: nowrap;
+  }
 }

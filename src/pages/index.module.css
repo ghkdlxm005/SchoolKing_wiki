@@ -1,0 +1,123 @@
+.hero {
+  padding: 5rem 0 4rem;
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, rgba(245, 184, 0, 0.18), transparent 60%),
+    var(--sk-hero-bg);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+.kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--sk-accent);
+}
+.title {
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.lead {
+  max-width: 40rem;
+  margin: 1.25rem 0 2rem;
+  font-size: 1.1rem;
+  color: var(--sk-muted);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.primary,
+.secondary {
+  padding: 0.7rem 1.3rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+.primary {
+  background: var(--sk-accent);
+  color: #14161c;
+}
+.primary:hover {
+  color: #14161c;
+  filter: brightness(1.08);
+}
+.secondary {
+  border: 1px solid var(--ifm-toc-border-color);
+  color: var(--ifm-font-color-base);
+}
+.secondary:hover {
+  border-color: var(--sk-accent);
+  color: var(--ifm-font-color-base);
+}
+.section {
+  padding: 3rem 0 0;
+}
+.section:last-child {
+  padding-bottom: 4rem;
+}
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.sectionHead h2 {
+  margin: 0;
+}
+.grid3,
+.grid6 {
+  display: grid;
+  gap: 1rem;
+}
+.grid3 {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.grid6 {
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+}
+.card,
+.weapon {
+  display: block;
+  padding: 1.25rem;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  text-decoration: none !important;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.card:hover,
+.weapon:hover {
+  border-color: var(--sk-accent);
+  color: var(--ifm-font-color-base);
+  transform: translateY(-2px);
+}
+.card h3 {
+  margin: 0.25rem 0 0.4rem;
+}
+.card p {
+  margin: 0;
+  color: var(--sk-muted);
+  font-size: 0.95rem;
+}
+.tag {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: var(--sk-accent-soft);
+  color: var(--sk-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.weapon strong {
+  display: block;
+  font-size: 1.05rem;
+}
+.weapon span {
+  color: var(--sk-muted);
+  font-size: 0.85rem;
+}
