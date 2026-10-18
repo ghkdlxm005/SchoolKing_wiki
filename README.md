@@ -1,41 +1,10 @@
-# Website
+# School KING Wiki
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Roblox 게임 **School KING**의 공개 위키(게임 소개·패치 노트). Docusaurus로 빌드되어 GitHub Pages로 배포된다.
 
-## Installation
+- 사이트: https://ghkdlxm005.github.io/SchoolKing_wiki/
+- 로컬 미리보기: `npm ci` → `npm start`
+- 빌드 확인: `npm run build`
+- `main`에 Push하면 GitHub Actions가 자동 배포
 
-```bash
-yarn
-```
-
-## Local Development
-
-```bash
-yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
-```bash
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+이 저장소는 공개 저장소이므로 코드 위치·내부 구조·보안 정보는 쓰지 않는다.
